@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interplay ISP</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <style>
+        body { margin: 0; padding: 0; overflow-x: hidden; }
+        .top-bar { background-color: #3131ce; color: white; padding: 10px 0; position: fixed; width: 100%; z-index: 1000; }
+        .nav-container { background-color: white; border-radius: 50px; position: fixed; top: 60px; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1200px; z-index: 1000; padding: 10px 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .carousel-item { height: 100vh; background-size: cover; background-position: center; animation: zoomEffect 15s ease-in-out infinite alternate; }
+        @keyframes zoomEffect { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
+        .carousel-caption { bottom: 0%; text-align: left; max-width: 600px; left: 10%; right: auto; }
+        .animated-text { opacity: 0; animation: slideUp 1s forwards; }
+        @keyframes slideUp { 0% { transform: translateY(50px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+        .carousel-control-prev, .carousel-control-next { width: 5%; }
+        .carousel-indicators { bottom: 10px; }
+        .promotion-tag { background-color: rgba(100, 100, 255, 0.1); color: #5e17eb; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+        .carousel-heading { font-size: 4.5rem; font-weight: 700; margin-bottom: 20px; color: white; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .carousel-subheading { color: #b2b2fd; font-size: 1.5rem; margin-bottom: 20px; }
+        .whatsapp-button { position: fixed; bottom: 30px; left: 30px; z-index: 1000; background-color: #25D366; color: white; border-radius: 50px; padding: 10px 20px; text-decoration: none; display: flex; align-items: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .whatsapp-button i { margin-right: 10px; }
+        .services-section { padding: 80px 0; background-color: white; text-align: center; }
+        .services-tag { background-color: rgba(255, 100, 100, 0.1); color: #ff6464; padding: 5px 15px; border-radius: 20px; display: inline-block; margin-bottom: 20px; }
+        .scroll-top { position: fixed; bottom: 30px; right: 30px; z-index: 1000; background-color: #3131ce; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; text-decoration: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .contact-section { padding: 120px 0; background-color: #3131ce; margin-top: 60px; }
+        .code-form { background-color: rgba(0, 0, 0, 0.2); padding: 30px; border-radius: 10px; }
+        .form-control { background-color: rgba(255, 255, 255, 0.9); border: none; height: 50px; border-radius: 5px; margin-bottom: 15px; padding: 10px 15px; }
+        textarea.form-control { height: 120px; }
+        .btn-black { background-color: #000; color: white; padding: 12px 30px; border-radius: 5px; border: none; font-weight: 600; }
+        .image-wrapper img { border-radius: 10px; box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div><i class="fas fa-map-marker-alt me-2"></i> Interplay Prado S.A.S Nit: xxxxxx CCra 78 No 41 Sur 46 San Antonio de Prado, Medellín, Antioquia.</div>
+            <div><a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a></div>
+        </div>
+    </div>
+    <div class="nav-container">
+        <div class="d-flex justify-content-between align-items-right">
+            <div class="logo"><img src="/Proyecto6/img/logo.jpg" alt="Interplay Logo" style="max-height: 60px;"></div>
+            <div class="navigation">
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown">Servicios</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="infoDropdown" role="button" data-bs-toggle="dropdown">Informacion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contactenos</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mainCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="background-image: url('assets/images/slide1.jpg');">
+                <div class="carousel-caption">
+                    <div class="promotion-tag animated-text">Interplay</div>
+                    <h1 class="carousel-heading animated-text" style="animation-delay: 0.3s;">Centro de Servicios informaticos </h1>
+                    <p class="carousel-subheading animated-text" style="animation-delay: 0.6s;">¡Nuestra razón de ser eres tú!</p>
+                    <h2 class="animated-text" style="animation-delay: 0.9s; color: white; font-size: 2.5rem;">¡Ven para tener el gusto de atenderte! </h2>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+        <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
+    </div>
+    <section class="services-section">
+        <div class="container">
+            <div class="services-tag">NUESTROS SERVICIOS</div>
+            <h2 class="fs-1 fw-bold mb-4">Te Ofrecemos</h2>
+            <p class="text-muted">¡Ven a Interplay para tener el guste de atenderte!</p>
+            <div class="row mt-5">
+                <div class="col-md-4 mb-4"><img src="/Proyecto6/img/inter1.jpg" alt="Service 1" class="img-fluid rounded"></div>
+                <div class="col-md-4 mb-4"><img src="/Proyecto6/img/inter2.jpg" alt="Service 2" class="img-fluid rounded"></div>
+                <div class="col-md-4 mb-4"><img src="/Proyecto6/img/inter3.jpg" alt="Service 3" class="img-fluid rounded"></div>
+            </div>
+        </div>
+    </section>
+    <section class="contact-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-md-6 mb-4 mb-md-0">
+                    <div class="image-wrapper"><img class="w-100" src="/Proyecto6/img/logo.jpg" alt="Interplay"></div>
+                </div>
+                <div class="col-lg-6 col-md-6 offset-lg-1">
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#" class="whatsapp-button"><i class="fab fa-whatsapp"></i> ¿Cómo puedo ayudarte?</a>
+    <a href="#" class="scroll-top"><i class="fas fa-chevron-up"></i></a>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new bootstrap.Carousel(document.getElementById('mainCarousel'), { interval: 5000 });
+            document.getElementById('mainCarousel').addEventListener('slide.bs.carousel', function () {
+                setTimeout(function() {
+                    document.querySelectorAll('.animated-text').forEach(element => { element.style.animation = 'none'; element.offsetHeight; element.style.animation = null; });
+                }, 600);
+            });
+            document.querySelector('.scroll-top').addEventListener('click', function(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+[07-Apr-2025 04:12:41 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:12:41 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 41
+[07-Apr-2025 04:13:21 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:13:21 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 41
+[07-Apr-2025 04:20:36 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:20:36 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 41
+[07-Apr-2025 04:21:05 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 40
+[07-Apr-2025 04:27:16 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:28:24 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:29:13 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 7
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 04:42:37 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 04:42:37 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:105
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_admin.php(105): mysqli_query(NULL, 'SELECT * FROM f...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 7
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 04:45:26 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 04:45:26 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:105
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_admin.php(105): mysqli_query(NULL, 'SELECT * FROM f...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 7
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 54
+[07-Apr-2025 05:24:25 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 05:24:25 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:105
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_admin.php(105): mysqli_query(NULL, 'SELECT * FROM f...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 105
+[07-Apr-2025 05:27:08 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 05:27:08 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 41
+[07-Apr-2025 05:28:02 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 3
+[07-Apr-2025 05:28:02 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 41
+[07-Apr-2025 05:29:04 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 2
+[07-Apr-2025 05:29:04 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 12
+[07-Apr-2025 05:29:05 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 2
+[07-Apr-2025 05:29:05 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 12
+[07-Apr-2025 05:29:09 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 2
+[07-Apr-2025 05:29:09 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/conexion/sesion.php on line 12
+[07-Apr-2025 05:31:35 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:31:35 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 13
+[07-Apr-2025 05:33:22 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:33:22 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 13
+[07-Apr-2025 05:34:42 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:34:42 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 13
+[07-Apr-2025 05:34:43 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 3
+[07-Apr-2025 05:34:43 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 13
+[07-Apr-2025 05:35:13 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:36:27 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:36:28 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:17) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:37:43 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:38:15 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:40:01 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:40:03 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:40:47 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:40:49 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 12
+[07-Apr-2025 05:41:46 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 15
+[07-Apr-2025 05:42:34 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/conexion.php:13) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 15
+[07-Apr-2025 05:45:34 America/Bogota] PHP Warning:  Undefined array key "rol" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 10
+[07-Apr-2025 05:45:34 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:10) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 19
+[07-Apr-2025 05:48:29 America/Bogota] PHP Warning:  Undefined array key "rol" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 10
+[07-Apr-2025 05:48:29 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:10) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 19
+[07-Apr-2025 05:50:20 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php on line 91
+[07-Apr-2025 05:50:20 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php:91
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_operador.php(91): mysqli_query(NULL, 'SELECT * FROM f...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php on line 91
+[07-Apr-2025 05:51:04 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php on line 91
+[07-Apr-2025 05:51:04 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php:91
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_operador.php(91): mysqli_query(NULL, 'SELECT * FROM f...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_operador.php on line 91
+[07-Apr-2025 05:54:45 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 30
+[07-Apr-2025 05:54:45 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/usuarios.php:30
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/usuarios.php(30): mysqli_query(NULL, 'SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 30
+[07-Apr-2025 05:56:57 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 33
+[07-Apr-2025 05:56:57 America/Bogota] PHP Fatal error:  Uncaught TypeError: mysqli_query(): Argument #1 ($mysql) must be of type mysqli, null given in /home3/juanest2/public_html/proyecto10/public/usuarios.php:33
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/usuarios.php(33): mysqli_query(NULL, 'SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 33
+[07-Apr-2025 05:58:19 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 44
+[07-Apr-2025 05:58:19 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 44
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:00:07 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/usuarios.php:8) in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 18
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:00:29 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/usuarios.php:8) in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 18
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 8
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 9
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 10
+[07-Apr-2025 06:01:18 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/usuarios.php:8) in /home3/juanest2/public_html/proyecto10/public/usuarios.php on line 19
+[07-Apr-2025 11:51:59 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 156
+[07-Apr-2025 11:51:59 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 156
+[07-Apr-2025 13:11:46 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 30
+[07-Apr-2025 13:11:46 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php:30
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 30
+[07-Apr-2025 13:13:27 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 30
+[07-Apr-2025 13:13:27 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php:30
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 30
+[07-Apr-2025 13:15:28 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 11
+[07-Apr-2025 13:15:28 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 12
+[07-Apr-2025 13:15:28 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 33
+[07-Apr-2025 13:15:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php:33
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 33
+[07-Apr-2025 13:16:30 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 11
+[07-Apr-2025 13:16:30 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 12
+[07-Apr-2025 13:20:39 America/Bogota] PHP Fatal error:  Uncaught ArgumentCountError: filter_input() expects at least 2 arguments, 1 given in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php:11
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php(11): filter_input('rolUsuario')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/nuevo_usuario.php on line 11
+[07-Apr-2025 13:34:36 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php:18) in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 19
+[07-Apr-2025 14:16:46 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:18) in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 19
+[07-Apr-2025 14:59:37 America/Bogota] PHP Warning:  Undefined variable $result_turnos in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 265
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:1) in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 10
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:1) in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 11
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:1) in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 12
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:1) in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 13
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:1) in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 14
+[07-Apr-2025 15:20:12 America/Bogota] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for TU_HOST failed: Name or service not known in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 22
+[07-Apr-2025 15:20:12 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for TU_HOST failed: Name or service not known in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php:22
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php(22): mysqli->__construct('TU_HOST', 'TU_USUARIO', Object(SensitiveParameterValue), 'TU_BASE_DE_DATO...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/pantalla_usuario.php on line 22
+[07-Apr-2025 22:03:58 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php:18) in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 19
+[07-Apr-2025 22:07:49 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php:18) in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 19
+[08-Apr-2025 00:50:56 America/Bogota] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for TU_HOST failed: Name or service not known in /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php on line 91
+[08-Apr-2025 00:50:56 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: php_network_getaddresses: getaddrinfo for TU_HOST failed: Name or service not known in /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php:91
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php(91): mysqli->__construct('TU_HOST', 'TU_USUARIO', Object(SensitiveParameterValue), 'TU_BASE_DE_DATO...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php on line 91
+[08-Apr-2025 00:59:21 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php:11) in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 12
+[08-Apr-2025 01:08:29 America/Bogota] PHP Parse error:  syntax error, unexpected string content "", expecting "-" or identifier or variable or number in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 265
+[08-Apr-2025 01:34:33 America/Bogota] PHP Warning:  Undefined array key "modulo" in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 210
+[08-Apr-2025 01:35:27 America/Bogota] PHP Warning:  Undefined array key "modulo" in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 212
+[08-Apr-2025 01:38:28 America/Bogota] PHP Warning:  Undefined array key "modulo" in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 212
+[08-Apr-2025 01:39:42 America/Bogota] PHP Warning:  Undefined array key "modulo" in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 221
+[08-Apr-2025 01:40:11 America/Bogota] PHP Warning:  Undefined array key "modulo" in /home3/juanest2/public_html/proyecto10/public/inicio_asesor.php on line 221
+[08-Apr-2025 02:16:02 America/Bogota] PHP Warning:  include(conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 6
+[08-Apr-2025 02:16:02 America/Bogota] PHP Warning:  include(): Failed opening 'conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 6
+[08-Apr-2025 02:16:02 America/Bogota] PHP Warning:  Undefined variable $conn in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 33
+[08-Apr-2025 02:16:02 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php:33
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 33
+[08-Apr-2025 02:16:06 America/Bogota] PHP Warning:  include(conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 6
+[08-Apr-2025 02:16:06 America/Bogota] PHP Warning:  include(): Failed opening 'conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 6
+[08-Apr-2025 02:16:06 America/Bogota] PHP Warning:  Undefined variable $conn in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 33
+[08-Apr-2025 02:16:06 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php:33
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/acciones_turno.php on line 33
+[08-Apr-2025 02:26:54 America/Bogota] PHP Parse error:  Unmatched '}' in /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php on line 158
+[08-Apr-2025 02:28:00 America/Bogota] PHP Parse error:  Unmatched '}' in /home3/juanest2/public_html/proyecto10/public/pantalla_turnos.php on line 160
+[08-Apr-2025 04:38:44 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1 in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:250
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_admin.php(250): mysqli->prepare('SELECT id, fech...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 250
+[08-Apr-2025 04:40:57 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''' at line 1 in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php:250
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/public/inicio_admin.php(250): mysqli->prepare('SELECT id, fech...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 250
+[08-Apr-2025 04:42:42 America/Bogota] PHP Parse error:  syntax error, unexpected end of file in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 403
+[08-Apr-2025 04:46:25 America/Bogota] PHP Warning:  Undefined array key "estado" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Warning:  Undefined array key "estado" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Warning:  Undefined array key "estado" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Warning:  Undefined array key "estado" in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279
+[08-Apr-2025 04:46:25 America/Bogota] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in /home3/juanest2/public_html/proyecto10/public/inicio_admin.php on line 279

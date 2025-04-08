@@ -1,0 +1,67 @@
+[31-Mar-2025 09:29:28 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'juanest2_facturacion.usuarios' doesn't exist in /home3/juanest2/public_html/personal/conexion/validador.php:10
+Stack trace:
+#0 /home3/juanest2/public_html/personal/conexion/validador.php(10): mysqli->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/personal/conexion/validador.php on line 10
+[31-Mar-2025 09:32:10 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'juanest2_facturacion.usuarios' doesn't exist in /home3/juanest2/public_html/personal/conexion/validador.php:10
+Stack trace:
+#0 /home3/juanest2/public_html/personal/conexion/validador.php(10): mysqli->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/personal/conexion/validador.php on line 10
+[31-Mar-2025 09:33:09 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'juanest2_facturacion.usuarios' doesn't exist in /home3/juanest2/public_html/personal/conexion/validador.php:10
+Stack trace:
+#0 /home3/juanest2/public_html/personal/conexion/validador.php(10): mysqli->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/personal/conexion/validador.php on line 10
+[31-Mar-2025 11:31:15 America/Bogota] PHP Warning:  include(/Personal/conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:31:15 America/Bogota] PHP Warning:  include(): Failed opening '/Personal/conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:31:15 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:31:15 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:34:41 America/Bogota] PHP Warning:  include(/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:34:41 America/Bogota] PHP Warning:  include(): Failed opening '/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:34:41 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:34:41 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:35:26 America/Bogota] PHP Warning:  include(/Personal/conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:35:26 America/Bogota] PHP Warning:  include(): Failed opening '/Personal/conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:35:26 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:35:26 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:36:51 America/Bogota] PHP Warning:  include(/Personal/conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:36:51 America/Bogota] PHP Warning:  include(): Failed opening '/Personal/conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:36:51 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:36:51 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:38:24 America/Bogota] PHP Warning:  include(/Personal/conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:38:24 America/Bogota] PHP Warning:  include(): Failed opening '/Personal/conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:38:24 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:38:24 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:39:37 America/Bogota] PHP Warning:  include(/Personal/conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:39:37 America/Bogota] PHP Warning:  include(): Failed opening '/Personal/conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/Personal/conexion/validador.php on line 2
+[31-Mar-2025 11:39:37 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[31-Mar-2025 11:39:37 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[04-Apr-2025 18:43:27 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nombre_usuario' in 'where clause' in /home3/juanest2/public_html/Personal/conexion/validador.php:10
+Stack trace:
+#0 /home3/juanest2/public_html/Personal/conexion/validador.php(10): mysqli->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/Personal/conexion/validador.php on line 10
+[06-Apr-2025 08:02:53 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'nombre_usuario' in 'where clause' in /home3/juanest2/public_html/proyecto9/conexion/validador.php:10
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/conexion/validador.php(10): mysqli->prepare('SELECT * FROM u...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/conexion/validador.php on line 10

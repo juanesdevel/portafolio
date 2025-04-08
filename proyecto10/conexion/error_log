@@ -1,0 +1,57 @@
+[07-Apr-2025 04:04:28 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:04:28 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:04:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:05:18 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:05:18 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:05:18 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:05:24 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:05:24 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:05:24 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:06:39 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:06:39 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:06:39 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:10
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 10
+[07-Apr-2025 04:11:28 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 7
+[07-Apr-2025 04:11:28 America/Bogota] PHP Warning:  Undefined variable $conexion in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 14
+[07-Apr-2025 04:11:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function prepare() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:14
+Stack trace:
+#0 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 14
+[07-Apr-2025 04:12:39 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 7
+[07-Apr-2025 04:13:19 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 7
+[07-Apr-2025 04:52:09 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:52:09 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 04:52:23 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:52:23 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 04:52:33 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:52:33 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 04:53:44 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:53:44 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 04:53:54 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:53:54 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 04:54:03 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 16
+[07-Apr-2025 04:54:03 America/Bogota] PHP Warning:  Undefined variable $rol in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 21
+[07-Apr-2025 05:22:18 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Unknown column 'id' in 'field list' in /home3/juanest2/public_html/proyecto10/conexion/validador.php:9
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/conexion/validador.php(9): mysqli->prepare('SELECT id, nomb...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 9
+[07-Apr-2025 05:24:24 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 22
+[07-Apr-2025 05:28:00 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 22
+[07-Apr-2025 05:29:08 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 22
+[07-Apr-2025 12:21:20 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/validador.php:49) in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 50
+[07-Apr-2025 12:22:25 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/validador.php:49) in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 50
+[07-Apr-2025 12:22:48 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/validador.php:49) in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 50
+[07-Apr-2025 12:23:43 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/validador.php:52) in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 53
+[07-Apr-2025 12:25:29 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto10/conexion/validador.php:52) in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 53

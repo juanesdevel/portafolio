@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tower Defense - Niveles</title>
+    <style>
+        body {
+           margin: 0;
+    padding: 20px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+        }
+/* Clearfix para evitar problemas con float */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+       #game-container {
+     position: relative;
+    width: 800px; /* Ancho fijo */
+    height: 500px; /* Alto fijo */
+    background-color: #2d2d2d;
+    border: 2px solid #404040;
+    overflow: hidden;
+    float: left; /* Coloca a la izquierda */
+    margin-right: 20px; /* Espacio entre los contenedores */
+ }
+        #path {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .monster {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff4444;
+            border-radius: 50%;
+            transition: transform 0.1s linear;
+        }
+
+        .monster-health {
+            position: absolute;
+            top: -5px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #4bf602;
+        }
+
+        .tower {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-color: #3498db;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .tower-range {
+            position: absolute;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            display: none;
+        }
+
+        .projectile {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #f1c40f;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+       #ui {
+    width: 400px; /* Ancho fijo */
+    height: 500px; /* Alto fijo */
+    display: inline-block; /* Coloca a la derecha */
+    padding: 10px;
+    background-color: #333;
+    border-radius: 5px;
+    float: right; /* Coloca a la derecha */
+}
+ 
+        #tower-buttons button {
+            margin: 0 10px;
+            padding: 8px 16px;
+            background-color: #3498db;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 3px;
+ float: down; 
+        }
+
+        #tower-buttons button:hover {
+            background-color: #2980b9;
+        }
+
+        #stats {
+            
+            gap: 20px;
+            align-items: center;
+        }
+
+        #base-health {
+            width: 200px;
+            height: 20px;
+            background-color: #2d2d2d;
+            border: 1px solid #404040;
+        }
+
+        #health-bar {
+            width: 100%;
+            height: 100%;
+            background-color: #4bf602;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+ <div id="tower-buttons">
+ <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+            <button onclick="togglePause()">Pausar/Reanudar</button>
+            	   
+ 	  
+           </div>
+    <div id="game-container">
+        <canvas id="path"></canvas>
+    </div>
+
+         
+       <div id="ui">
+        <div id="stats">
+            <div><h2>Score: <span id="score">0</span></h2></div><br>
+            <div><h2>Money: $<span id="money">800</span></h2></div><br>
+            <div><h2>Wave: <span id="wave">1</span></h2></div><br>
+            <div><h1>Level: <span id="level">1</span></h1></div>
+            <div>
+
+Base Health:
+                <div id="base-health">
+                    <div id="health-bar"></div> 
+               
+           
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+ <div id="tower-buttons">
+
+ 	   <button onclick="selectTower('basic')">Basic Tower ($100)</button>
+            <button onclick="selectTower('rapid')">Rapid Tower ($200)</button>
+            <button onclick="selectTower('sniper')">Sniper Tower ($300)</button>
+           
+           </div>
+ 
+	
+    <script>
+        // Game state
+        let isPaused = false;
+        let score = 0;
+        let money = 800;
+        let baseHealth = 100;
+        let wave = 1;
+        let level = 1;
+        let monsters = [];
+        let towers = [];
+        let projectiles = [];
+        let selectedTower = null;
+        let gameLoop;
+        let spawnInterval;
+
+        // Tower types
+        const towerTypes = {
+            basic: {
+                cost: 100,
+                range: 100,
+                damage: 10,
+                fireRate: 500,
+                color: '#33b52c'
+            },
+            rapid: {
+                cost: 200,
+                range: 120,
+                damage: 10,
+                fireRate: 300,
+                color: '#0009b2'
+            },
+            sniper: {
+                cost: 300,
+                range: 150,
+                damage: 50,
+                fireRate: 2000,
+                color: '#9b59b6'
+            }
+        };
+
+        // Path points for monsters to follow
+        let pathPoints = [
+            {x: 0, y: 250},
+            {x: 150, y: 250},
+            {x: 150, y: 100},
+            {x: 400, y: 100},
+            {x: 400, y: 400},
+            {x: 650, y: 400},
+            {x: 650, y: 250},
+            {x: 800, y: 250}
+        ];
+
+        // Draw path on canvas
+        const canvas = document.getElementById('path');
+        const ctx = canvas.getContext('2d');
+        canvas.width = 800;
+        canvas.height = 500;
+
+        function drawPath() {
+            ctx.strokeStyle = '#404040';
+            ctx.lineWidth = 30;
+            ctx.beginPath();
+            ctx.moveTo(pathPoints[0].x, pathPoints[0].y);
+            for (let i = 1; i < pathPoints.length; i++) {
+                ctx.lineTo(pathPoints[i].x, pathPoints[i].y);
+            }
+            ctx.stroke();
+        }
+
+        // Monster class
+        class Monster {
+            constructor() {
+                this.element = document.createElement('div');
+                this.element.className = 'monster';
+                this.healthBar = document.createElement('div');
+                this.healthBar.className = 'monster-health';
+                this.element.appendChild(this.healthBar);
+
+                this.x = pathPoints[0].x;
+                this.y = pathPoints[0].y;
+                this.pathIndex = 0;
+                this.health = 100 * (1 + wave * 0.5);
+                this.maxHealth = this.health;
+                this.speed = 1 + wave * 0.1;
+                this.value = 10 + wave * 5;
+
+                document.getElementById('game-container').appendChild(this.element);
+                this.updatePosition();
+            }
+
+            updatePosition() {
+                this.element.style.transform = `translate(${this.x - 10}px, ${this.y - 10}px)`;
+                this.healthBar.style.width = (this.health / this.maxHealth * 100) + '%';
+            }
+
+            move() {
+                if (this.pathIndex >= pathPoints.length - 1) {
+                    baseHealth -= 10;
+                    updateUI();
+                    this.destroy();
+                    return;
+                }
+
+                const target = pathPoints[this.pathIndex + 1];
+                const dx = target.x - this.x;
+                const dy = target.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < this.speed) {
+                    this.pathIndex++;
+                    return;
+                }
+
+                const ratio = this.speed / distance;
+                this.x += dx * ratio;
+                this.y += dy * ratio;
+                this.updatePosition();
+            }
+
+            takeDamage(damage) {
+                this.health -= damage;
+                if (this.health <= 0) {
+                    score += this.value;
+                    money += this.value;
+                    updateUI();
+                    this.destroy();
+                } else {
+                    this.updatePosition();
+                }
+            }
+
+            destroy() {
+                this.element.remove();
+                monsters = monsters.filter(m => m !== this);
+            }
+        }
+
+        // Tower class
+        class Tower {
+            constructor(x, y, type) {
+                this.element = document.createElement('div');
+                this.element.className = 'tower';
+                this.element.style.backgroundColor = towerTypes[type].color;
+
+                this.range = document.createElement('div');
+                this.range.className = 'tower-range';
+
+                this.x = x;
+                this.y = y;
+                this.type = type;
+                this.lastFired = 0;
+
+                this.element.style.transform = `translate(${x - 15}px, ${y - 15}px)`;
+                this.range.style.width = (towerTypes[type].range * 2) + 'px';
+                this.range.style.height = (towerTypes[type].range * 2) + 'px';
+                this.range.style.transform = `translate(${x - towerTypes[type].range}px, ${y - towerTypes[type].range}px)`;
+
+                document.getElementById('game-container').appendChild(this.element);
+                document.getElementById('game-container').appendChild(this.range);
+
+                this.element.addEventListener('mouseover', () => this.range.style.display = 'block');
+                this.element.addEventListener('mouseout', () => this.range.style.display = 'none');
+            }
+
+            findTarget() {
+                const now = Date.now();
+                if (now - this.lastFired < towerTypes[this.type].fireRate) return;
+
+                for (const monster of monsters) {
+                    const dx = monster.x - this.x;
+                    const dy = monster.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance <= towerTypes[this.type].range) {
+                        this.fire(monster);
+                        this.lastFired = now;
+                        break;
+                    }
+                }
+            }
+
+            fire(monster) {
+                const projectile = document.createElement('div');
+                projectile.className = 'projectile';
+                projectile.style.transform = `translate(${this.x - 3}px, ${this.y - 3}px)`;
+                document.getElementById('game-container').appendChild(projectile);
+
+                const dx = monster.x - this.x;
+                const dy = monster.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const duration = distance * 2;
+
+                projectile.animate([
+                    { transform: `translate(${this.x - 3}px, ${this.y - 3}px)` },
+                    { transform: `translate(${monster.x - 3}px, ${monster.y - 3}px)` }
+                ], {
+                    duration: duration,
+                    easing: 'linear'
+                }).onfinish = () => {
+                    projectile.remove();
+                    monster.takeDamage(towerTypes[this.type].damage);
+                };
+            }
+        }
+
+        // Game initialization
+        function initGame() {
+            drawPath();
+            startWave();
+            gameLoop = setInterval(update, 20);
+        }
+
+        // Game update loop
+        function update() {
+            if (isPaused) return;
+
+            if (baseHealth <= 0) {
+                gameOver();
+                return;
+            }
+
+            monsters.forEach(monster => monster.move());
+            towers.forEach(tower => tower.findTarget());
+
+            if (monsters.length === 0 && !spawnInterval) {
+                wave++;
+                updateUI();
+                setTimeout(startWave, 2);
+            }
+
+            // Verificar si el puntaje alcanza 500
+            if (score >= 100) {
+                nextLevel();
+            }
+        }
+
+        // Wave management
+        function startWave() {
+            let monstersToSpawn = 5 + wave * 2;
+            spawnInterval = setInterval(() => {
+                monsters.push(new Monster());
+                monstersToSpawn--;
+                if (monstersToSpawn <= 0) {
+                    clearInterval(spawnInterval);
+                    spawnInterval = null;
+                }
+            }, 1000);
+        }
+
+        // UI updates
+        function updateUI() {
+            document.getElementById('score').textContent = score;
+            document.getElementById('money').textContent = money;
+            document.getElementById('wave').textContent = wave;
+            document.getElementById('level').textContent = level;
+            document.getElementById('health-bar').style.width = baseHealth + '%';
+
+            if (baseHealth <= 0) {
+                gameOver();
+            }
+        }
+
+        // Tower placement
+        function selectTower(type) {
+            if (money < towerTypes[type].cost) return;
+            selectedTower = type;
+            document.getElementById('game-container').style.cursor = 'crosshair';
+        }
+
+        document.getElementById('game-container').addEventListener('click', (e) => {
+            if (!selectedTower) return;
+
+            const rect = e.target.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            if (money >= towerTypes[selectedTower].cost) {
+                towers.push(new Tower(x, y, selectedTower));
+                money -= towerTypes[selectedTower].cost;
+                updateUI();
+            }
+
+            selectedTower = null;
+            document.getElementById('game-container').style.cursor = 'default';
+        });
+
+        // Game over
+        function gameOver() {
+            clearInterval(gameLoop);
+            if (spawnInterval) clearInterval(spawnInterval);
+            alert(`Game Over! Score: ${score}`);
+        }
+
+        // Next level
+        function nextLevel() {
+            if (level >= 10) {
+                alert("¡Felicidades! Has completado todos los niveles.");
+                return;
+            }
+
+            // Eliminar todas las torres del DOM
+            towers.forEach(tower => {
+                tower.element.remove(); // Eliminar el elemento de la torre
+                tower.range.remove();   // Eliminar el rango de la torre
+            });
+
+            // Limpiar el canvas (eliminar el camino del nivel anterior)
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Eliminar todos los monstruos del DOM
+            monsters.forEach(monster => {
+                monster.element.remove(); // Eliminar el elemento del monstruo
+            });
+
+            // Reiniciar el estado del juego
+            level++;
+            score = 0;
+            money = 800;
+            baseHealth = 100;
+            wave = 1;
+            monsters = [];
+            towers = [];
+            projectiles = [];
+
+            // Cambiar el camino según el nivel
+            if (level === 2) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 200, y: 250},
+                    {x: 200, y: 400},
+                    {x: 400, y: 400},
+                    {x: 400, y: 100},
+                    {x: 600, y: 100},
+                    {x: 600, y: 250},
+                    {x: 800, y: 250}
+                ];
+            } else if (level === 3) {
+                pathPoints = [
+                    {x: 0, y: 250},   // Inicio
+    {x: 200, y: 250}, // Derecha
+    {x: 200, y: 100}, // Arriba
+    {x: 400, y: 100}, // Derecha
+    {x: 400, y: 400}, // Abajo
+    {x: 600, y: 400}, // Derecha
+    {x: 600, y: 100}, // Arriba
+    {x: 800, y: 100}  // Derecha (final)
+                ];
+            } else if (level === 4) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 200, y: 250},
+                    {x: 200, y: 100},
+                    {x: 400, y: 100},
+                    {x: 400, y: 400},
+                    {x: 600, y: 400},
+                    {x: 600, y: 250},
+                    {x: 800, y: 250}
+                ];
+            } else if (level === 5) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 400, y: 250},
+                    {x: 400, y: 100},
+                    {x: 800, y: 100}
+                ];
+            } else if (level === 6) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 200, y: 250},
+                    {x: 200, y: 400},
+                    {x: 600, y: 400},
+                    {x: 600, y: 100},
+                    {x: 800, y: 100}
+                ];
+            } else if (level === 7) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 150, y: 250},
+                    {x: 150, y: 100},
+                    {x: 300, y: 100},
+                    {x: 300, y: 400},
+                    {x: 450, y: 400},
+                    {x: 450, y: 100},
+                    {x: 800, y: 100}
+                ];
+            } else if (level === 8) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 200, y: 250},
+                    {x: 200, y: 100},
+                    {x: 400, y: 100},
+                    {x: 400, y: 400},
+                    {x: 600, y: 400},
+                    {x: 600, y: 100},
+                    {x: 800, y: 100}
+                ];
+            } else if (level === 9) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 150, y: 250},
+                    {x: 150, y: 400},
+                    {x: 300, y: 400},
+                    {x: 300, y: 100},
+                    {x: 450, y: 100},
+                    {x: 450, y: 400},
+                    {x: 800, y: 400}
+                ];
+            } else if (level === 10) {
+                pathPoints = [
+                    {x: 0, y: 250},
+                    {x: 800, y: 250},
+                    {x: 800, y: 100},
+                    {x: 0, y: 100},
+                    {x: 0, y: 400},
+                    {x: 800, y: 400}
+                ];
+            }
+
+            // Redibujar el camino y actualizar la interfaz
+            drawPath();
+            updateUI();
+            startWave();
+
+            alert(`¡Felicidades! Avanzaste al nivel ${level}`);
+        }
+
+        // Reiniciar juego
+        function reiniciarJuego() {
+            location.reload();
+        }
+
+        // Pausar/Reanudar
+        function togglePause() {
+            isPaused = !isPaused;
+
+            if (isPaused) {
+                clearInterval(gameLoop);
+                if (spawnInterval) clearInterval(spawnInterval);
+               
+            } else {
+                gameLoop = setInterval(update, 20);
+                startWave();
+            }
+        }
+
+        // Start the game
+        initGame();
+    </script>
+</body>
+</html>

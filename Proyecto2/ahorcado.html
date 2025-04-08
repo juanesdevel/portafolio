@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego del Ahorcado</title>
+    <style>
+        /* Estilos generales del cuerpo de la página */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Estilo para el título de la categoría */
+        #categoria {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        /* Contenedor para la imagen/emoji del ahorcado */
+        #imagenAhorcado {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+        }
+        
+        /* Estilo para el contenedor de la palabra a adivinar */
+        #palabraContainer {
+            margin: 20px 0;
+            font-size: 30px;
+            letter-spacing: 10px; /* Espacio entre las letras/guiones */
+        }
+        
+        /* Estilo para el contador de letras restantes */
+        #letrasRestantes {
+            margin: 10px 0;
+        }
+        
+        /* Estilo para el campo de entrada de letra */
+        #inputLetra {
+            font-size: 20px;
+            width: 50px;
+            text-align: center;
+            margin: 10px;
+        }
+        
+        /* Estilos para el botón de probar */
+        #probarBtn {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        /* Efecto hover para el botón */
+        #probarBtn:hover {
+            background-color: #45a049;
+        }
+        
+        /* Estilo para los mensajes de victoria/derrota */
+        .mensaje {
+            font-size: 24px;
+            color: red;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Estructura básica del juego -->
+    <div id="categoria"></div>
+    <div id="imagenAhorcado">🙂</div>
+    <div id="palabraContainer"></div>
+    <div id="letrasRestantes"></div>
+    <input type="text" id="inputLetra" maxlength="1">
+    <br>
+    <button id="probarBtn">Probar</button>
+    <div id="mensaje" class="mensaje"></div>
+
+    <script>
+        // Objeto que contiene todas las categorías y sus palabras
+        const categorias = {
+            'Países del Mundo': ['MEXICO', 'FRANCIA', 'ESPAÑA', 'BRASIL', 'JAPON', 'ITALIA', 'CANADA', 'ARGENTINA',
+				'CHILE', 'ALEMANIA', 'CHINA', 'RUSIA', 'INDIA', 'AUSTRALIA', 'SUECIA', 'NORUEGA',
+				'FINLANDIA', 'DINAMARCA', 'SUIZA', 'HOLANDA', 'PORTUGAL', 'GRECIA', 'POLONIA', 'COLOMBIA',
+				'PERU', 'VENEZUELA', 'ECUADOR', 'CUBA', 'PANAMA', 'COSTA RICA'],
+
+            'Animales': ['PERRO', 'GATO', 'ELEFANTE', 'JIRAFA', 'LEON', 'TIGRE', 'DELFIN', 'BALLENA',
+			'OSO', 'CONEJO', 'ZORRO', 'CANGURO', 'KOALA', 'CABALLO', 'BURRO', 'LOBO',
+			'PINGÜINO', 'CISNE', 'RINOCERONTE', 'HIPOPOTAMO', 'GORILA', 'MONO', 'AVESTRUZ', 'IGUANA',
+			'TORTUGA', 'CROCODILO', 'SERPIENTE', 'AGUILA', 'HALCON', 'BUHO'],
+
+            'Frutas': ['MANZANA', 'PLATANO', 'NARANJA', 'PERA', 'UVA', 'MANGO', 'KIWI', 'FRESA',
+			'SANDIA', 'MELON', 'PAPAYA', 'CEREZA', 'DURAZNO', 'ALBARICOQUE', 'PIÑA', 'GUAYABA',
+			'FRAMBUESA', 'ARANDANO', 'LIMON', 'GRANADA', 'HIGO', 'MANDARINA', 'TAMARINDO', 'CHIRIMOYA',
+			'MORAS', 'CARAMBOLA', 'MARACUYA', 'CACAO', 'NISPERO', 'LITCHI'],
+
+            'Apellidos': ['GARCIA', 'RODRIGUEZ', 'MARTINEZ', 'LOPEZ', 'PEREZ', 'GONZALEZ', 'SANCHEZ', 'RAMIREZ',
+			'HERNANDEZ', 'FERNANDEZ', 'TORRES', 'CRUZ', 'MORALES', 'GOMEZ', 'DIAZ', 'ALVAREZ',
+			'ROMERO', 'ORTEGA', 'NAVARRO', 'CASTRO', 'DEL RIO', 'VARGAS', 'MENDOZA', 'AGUILAR',
+			'ESPINOZA', 'SALAZAR', 'MEJIA', 'ORTIZ', 'SUAREZ', 'MIRANDA'],
+
+            'Artistas Internacionales': ['SHAKIRA', 'MADONNA', 'BEYONCE', 'ADELE', 'RIHANNA', 'EMINEM', 'DRAKE', 'QUEEN',
+			'TAYLOR SWIFT', 'BRUNO MARS', 'KATY PERRY', 'JUSTIN BIEBER', 'LADY GAGA', 'ED SHEERAN',
+			'COLDPLAY', 'MAROON 5', 'THE WEEKND', 'BTS', 'DUA LIPA', 'BILLIE EILISH', 'POST MALONE',
+			'HARRY STYLES', 'SELENA GOMEZ', 'SAM SMITH', 'ARCTIC MONKEYS', 'LANA DEL REY', 'DOJA CAT',
+			'OLIVIA RODRIGO', 'KANYE WEST', 'JAY-Z']};
+
+        // Array con los emojis que representan los estados del ahorcado
+        const estadosAhorcado = ['🙂', '😐', '😟', '😨', '😱', '💀'];
+        
+        // Variables globales para el estado del juego
+        let categoriaActual;     // Almacena la categoría seleccionada
+        let palabraActual;       // Almacena la palabra a adivinar
+        let palabraOculta;       // Almacena la palabra con guiones y letras adivinadas
+        let intentosFallidos;    // Contador de intentos fallidos
+        let letrasAdivinadas;    // Conjunto de letras ya intentadas
+
+        // Función para iniciar o reiniciar el juego
+        function iniciarJuego() {
+            // Selecciona una categoría aleatoria
+            const categoriasArray = Object.keys(categorias);
+            categoriaActual = categoriasArray[Math.floor(Math.random() * categoriasArray.length)];
+            
+            // Selecciona una palabra aleatoria de la categoría
+            const palabrasCategoria = categorias[categoriaActual];
+            palabraActual = palabrasCategoria[Math.floor(Math.random() * palabrasCategoria.length)];
+            
+            // Inicializa la palabra oculta con guiones bajos
+            palabraOculta = '_'.repeat(palabraActual.length);
+            
+            // Reinicia contadores y conjunto de letras
+            intentosFallidos = 0;
+            letrasAdivinadas = new Set();
+
+            // Actualiza la interfaz
+            document.getElementById('categoria').textContent = categoriaActual;
+            document.getElementById('palabraContainer').textContent = palabraOculta;
+            document.getElementById('imagenAhorcado').textContent = estadosAhorcado[0];
+            document.getElementById('mensaje').textContent = '';
+            actualizarLetrasRestantes();
+        }
+
+        // Función para actualizar el contador de letras restantes
+        function actualizarLetrasRestantes() {
+            const letrasNoAdivinadas = palabraOculta.split('').filter(letra => letra === '_').length;
+            document.getElementById('letrasRestantes').textContent = `Letras restantes: ${letrasNoAdivinadas}`;
+        }
+
+        // Función principal para procesar el intento de una letra
+        function probarLetra() {
+            // Obtiene y limpia el input
+            const input = document.getElementById('inputLetra');
+            const letra = input.value.toUpperCase();
+            input.value = '';
+
+            // Validación básica
+            if (letra === '' || letrasAdivinadas.has(letra)) {
+                return;
+            }
+
+            // Agrega la letra al conjunto de letras intentadas
+            letrasAdivinadas.add(letra);
+            let acierto = false;
+            let nuevaPalabraOculta = '';
+
+            // Revisa cada letra de la palabra
+            for (let i = 0; i < palabraActual.length; i++) {
+                if (palabraActual[i] === letra) {
+                    nuevaPalabraOculta += letra;
+                    acierto = true;
+                } else {
+                    nuevaPalabraOculta += palabraOculta[i];
+                }
+            }
+
+            // Maneja el caso de error
+            if (!acierto) {
+                intentosFallidos++;
+                document.getElementById('imagenAhorcado').textContent = estadosAhorcado[intentosFallidos];
+                
+                // Verifica si el juego terminó por derrota
+                if (intentosFallidos >= 5) {
+                    document.getElementById('mensaje').textContent = '¡Estás ahorcado! La palabra era: ' + palabraActual;
+                    document.getElementById('inputLetra').disabled = true;
+                    document.getElementById('probarBtn').disabled = true;
+                    return;
+                }
+            }
+
+            // Actualiza la palabra mostrada
+            palabraOculta = nuevaPalabraOculta;
+            document.getElementById('palabraContainer').textContent = palabraOculta;
+            actualizarLetrasRestantes();
+
+            // Verifica si el jugador ganó
+            if (!palabraOculta.includes('_')) {
+                document.getElementById('mensaje').textContent = '¡Felicidades! ¡Has ganado!';
+                document.getElementById('inputLetra').disabled = true;
+                document.getElementById('probarBtn').disabled = true;
+            }
+        }
+
+        // Event listeners para el botón y el campo de entrada
+        document.getElementById('probarBtn').addEventListener('click', probarLetra);
+        document.getElementById('inputLetra').addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                probarLetra();
+            }
+        });
+
+        // Inicia el juego cuando carga la página
+        iniciarJuego();
+    </script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+[02-Apr-2025 16:23:10 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Table 'juanest2_keepass.eventos' doesn't exist in /home3/juanest2/public_html/Personal/vistas/eventos/evento_crear.php:18
+Stack trace:
+#0 /home3/juanest2/public_html/Personal/vistas/eventos/evento_crear.php(18): mysqli->query('INSERT INTO eve...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/Personal/vistas/eventos/evento_crear.php on line 18

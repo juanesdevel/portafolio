@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban de Tareas</title>
+    <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --column-bg: #2d2d2d;
+            --card-bg: #404040;
+            --text-color: #e0e0e0;
+            --accent-color: #4f46e5;
+            --success-color: #22c55e;
+            --progress-color: #eab308;
+            --border-color: #404040;
+	    --sesion-color: #e14321;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+
+        /* Formulario de entrada */
+        .task-input-container {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+        }
+	
+        input[type="text"] {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            font-size: 1rem;
+        }
+
+        input[type="text"]:focus {
+            outline: 2px solid var(--accent-color);
+            border-color: transparent;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        /* Columnas Kanban */
+        .kanban-board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .kanban-column {
+            background-color: var(--column-bg);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            min-height: 500px;
+        }
+
+        .column-header {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .todo-column .column-header {
+            color: var(--accent-color);
+        }
+
+        .progress-column .column-header {
+            color: var(--progress-color);
+        }
+
+        .done-column .column-header {
+            color: var(--success-color);
+        }
+
+        /* Tarjetas de tareas */
+        .task-card {
+            background-color: var(--card-bg);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            cursor: move;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-card.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+
+        .task-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn-delete {
+            background-color: #ef4444;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* Animaciones */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos para el área de drop */
+        .kanban-column.drag-over {
+            background-color: #3d3d3d;
+            border: 2px dashed var(--accent-color);
+        }
+    </style>
+</head>
+<body>
+ <nav>
+           <a href="login.html">Cerrar Sesión</a>
+          </nav>
+<br> <hr> <br> 
+
+        <header>
+            <h1>Kanban de Tareas</h1>
+            <div class="task-input-container">
+                <input type="text" id="task-input" placeholder="Agregar nueva tarea..." />
+                <button id="add-task">Agregar</button>
+            </div>
+        </header>
+
+        <div class="kanban-board">
+            <div class="kanban-column todo-column" data-column="todo">
+                <h2 class="column-header">Por Hacer</h2>
+                <div class="tasks-container" id="todo-tasks"></div>
+            </div>
+            <div class="kanban-column progress-column" data-column="progress">
+                <h2 class="column-header">En Progreso</h2>
+                <div class="tasks-container" id="progress-tasks"></div>
+            </div>
+            <div class="kanban-column done-column" data-column="done">
+                <h2 class="column-header">Completadas</h2>
+                <div class="tasks-container" id="done-tasks"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class KanbanBoard {
+            constructor() {
+                this.tasks = JSON.parse(localStorage.getItem('kanban-tasks')) || {
+                    todo: [],
+                    progress: [],
+                    done: []
+                };
+                this.draggedTask = null;
+                this.setupEventListeners();
+                this.renderAllTasks();
+            }
+
+            setupEventListeners() {
+                // Event listener para agregar tareas
+                document.getElementById('add-task').addEventListener('click', () => this.addTask());
+                document.getElementById('task-input').addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') this.addTask();
+                });
+
+                // Event listeners para drag and drop
+                document.querySelectorAll('.kanban-column').forEach(column => {
+                    column.addEventListener('dragover', (e) => {
+                        e.preventDefault();
+                        column.classList.add('drag-over');
+                    });
+
+                    column.addEventListener('dragleave', (e) => {
+                        column.classList.remove('drag-over');
+                    });
+
+                    column.addEventListener('drop', (e) => {
+                        e.preventDefault();
+                        column.classList.remove('drag-over');
+                        const targetColumn = column.dataset.column;
+                        if (this.draggedTask) {
+                            this.moveTask(this.draggedTask.id, this.draggedTask.sourceColumn, targetColumn);
+                        }
+                    });
+                });
+            }
+
+            addTask() {
+                const input = document.getElementById('task-input');
+                const text = input.value.trim();
+                
+                if (text) {
+                    const task = {
+                        id: Date.now(),
+                        text: text
+                    };
+
+                    this.tasks.todo.push(task);
+                    this.saveTasks();
+                    this.renderAllTasks();
+                    input.value = '';
+                }
+            }
+
+            moveTask(taskId, sourceColumn, targetColumn) {
+                // Encontrar y remover la tarea de la columna origen
+                const taskIndex = this.tasks[sourceColumn].findIndex(task => task.id === taskId);
+                if (taskIndex === -1) return;
+
+                const task = this.tasks[sourceColumn][taskIndex];
+                this.tasks[sourceColumn].splice(taskIndex, 1);
+                
+                // Agregar la tarea a la columna destino
+                this.tasks[targetColumn].push(task);
+                
+                this.saveTasks();
+                this.renderAllTasks();
+            }
+
+            deleteTask(taskId, column) {
+                this.tasks[column] = this.tasks[column].filter(task => task.id !== taskId);
+                this.saveTasks();
+                this.renderAllTasks();
+            }
+
+            saveTasks() {
+                localStorage.setItem('kanban-tasks', JSON.stringify(this.tasks));
+            }
+
+            createTaskCard(task, column) {
+                const card = document.createElement('div');
+                card.className = 'task-card';
+                card.draggable = true;
+                card.innerHTML = `
+                    <div class="task-content">${task.text}</div>
+                    <div class="task-actions">
+                        <button class="btn-delete">Eliminar</button>
+                    </div>
+                `;
+
+                // Event listeners para drag and drop
+                card.addEventListener('dragstart', () => {
+                    card.classList.add('dragging');
+                    this.draggedTask = { id: task.id, sourceColumn: column };
+                });
+
+                card.addEventListener('dragend', () => {
+                    card.classList.remove('dragging');
+                    this.draggedTask = null;
+                });
+
+                // Event listener para eliminar
+                card.querySelector('.btn-delete').addEventListener('click', () => {
+                    this.deleteTask(task.id, column);
+                });
+
+                return card;
+            }
+
+            renderAllTasks() {
+                // Renderizar tareas en cada columna
+                Object.keys(this.tasks).forEach(column => {
+                    const container = document.getElementById(`${column}-tasks`);
+                    container.innerHTML = '';
+                    this.tasks[column].forEach(task => {
+                        container.appendChild(this.createTaskCard(task, column));
+                    });
+                });
+            }
+        }
+
+        // Inicializar la aplicación
+        document.addEventListener('DOMContentLoaded', () => {
+            new KanbanBoard();
+        });
+    </script>
+</body>
+</html>

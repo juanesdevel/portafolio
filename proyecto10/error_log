@@ -1,0 +1,41 @@
+[07-Apr-2025 04:04:15 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:06:11 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:15:40 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 7
+[07-Apr-2025 04:16:24 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:16:26 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:17:02 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:17:05 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:17:25 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:18:58 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:28:34 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 5
+[07-Apr-2025 04:28:57 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:28:59 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:29:14 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:31:07 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:37:11 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:38:29 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:38:30 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:41:27 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:42:15 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:42:28 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 2
+[07-Apr-2025 04:45:31 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:49:08 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 3
+[07-Apr-2025 04:51:40 America/Bogota] PHP Parse error:  Unmatched '}' in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 45
+[07-Apr-2025 05:06:22 America/Bogota] PHP Warning:  Undefined variable $stmt in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41
+[07-Apr-2025 05:06:22 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:41
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/index.php(80): include()
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41
+[07-Apr-2025 05:06:28 America/Bogota] PHP Warning:  Undefined variable $stmt in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41
+[07-Apr-2025 05:06:28 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:41
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/index.php(80): include()
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41
+[07-Apr-2025 05:06:33 America/Bogota] PHP Warning:  Undefined variable $stmt in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41
+[07-Apr-2025 05:06:33 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function close() on null in /home3/juanest2/public_html/proyecto10/conexion/validador.php:41
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto10/index.php(80): include()
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto10/conexion/validador.php on line 41

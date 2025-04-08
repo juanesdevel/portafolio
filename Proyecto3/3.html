@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería Interactiva</title>
+    <style>
+        :root {
+            --primary-color: #2a6bb0;
+            --secondary-color: #f5f5f5;
+            --accent-color: #1d4ed8;
+            --text-color: #333333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            margin-bottom: 2rem;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            height: 350px;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .carousel-button:hover {
+            background: white;
+        }
+
+        .carousel-button.prev {
+            left: 1rem;
+        }
+
+        .carousel-button.next {
+            right: 1rem;
+        }
+
+        /* Grid Styles */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .grid-item {
+            position: relative;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .grid-item:hover {
+            transform: scale(1.05);
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            animation: modalOpen 0.3s forwards;
+        }
+
+        @keyframes modalOpen {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+        }
+
+        .modal-details {
+            margin-top: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .modal-link {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .modal-navigation {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
+        }
+
+        .modal-nav-button {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid var(--shadow-color);
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .carousel-item {
+                height: 300px;
+            }
+
+            .grid-item {
+                height: 180px;
+            }
+
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Buscar imágenes...">
+        </div>
+
+        <!-- Carousel -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="1.webp" alt="Limón">
+                </div>
+                <div class="carousel-item">
+                    <img src="2.webp" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="3.webp" alt="Imagen 3">
+                </div>
+ 		<div class="carousel-item">
+                    <img src="4.webp" alt="Imagen 4">
+                </div>
+		 <div class="carousel-item">
+                    <img src="5.webp" alt="Imagen 5">
+                </div>
+ 		<div class="carousel-item">
+                    <img src="6.webp" alt="Imagen 6">
+                </div>
+ 		<div class="carousel-item">
+                    <img src="7.webp" alt="Imagen 7">
+                </div>
+		 <div class="carousel-item">
+                    <img src="8.webp" alt="Imagen 8">
+                </div>
+            </div>
+            <button class="carousel-button prev">←</button>
+            <button class="carousel-button next">→</button>
+        </div>
+
+        <!-- Image Grid -->
+        <div class="image-grid">
+	     <div class="grid-item">
+                <img src="1.webp" alt="Imagen 1" data-title="Imagen 1" data-description="Descripción de la imagen 1" data-link="https://ejemplo.com/1">
+            </div>
+	    <div class="grid-item">
+                <img src="2.webp" alt="Imagen 2" data-title="Imagen 2" data-description="Descripción de la imagen 2" data-link="https://ejemplo.com/1">
+            </div>	
+	    <div class="grid-item">
+                <img src="3.webp" alt="Imagen 3" data-title="Imagen 3" data-description="Descripción de la imagen 3" data-link="https://ejemplo.com/1">
+            </div>
+            <div class="grid-item">
+                <img src="4.webp" alt="Imagen 4" data-title="Imagen 4" data-description="Descripción de la imagen 4" data-link="https://ejemplo.com/1">
+            </div>
+            <div class="grid-item">
+                <img src="5.webp" alt="Imagen 5" data-title="Imagen 5" data-description="Descripción de la imagen 5" data-link="https://ejemplo.com/2">
+            </div>
+            <div class="grid-item">
+                <img src="6.webp" alt="Imagen 6" data-title="Imagen 6" data-description="Descripción de la imagen 6" data-link="https://ejemplo.com/3">
+            </div>
+	    <div class="grid-item">
+                <img src="7.webp" alt="Imagen 7" data-title="Imagen 7" data-description="Descripción de la imagen 7" data-link="https://ejemplo.com/3">
+            </div>
+	    <div class="grid-item">
+                <img src="8.webp" alt="Imagen 8" data-title="Imagen 8" data-description="Descripción de la imagen 8" data-link="https://ejemplo.com/3">
+            </div>
+            <!-- Add more grid items as needed -->
+        </div>
+
+        <!-- Modal -->
+        <div class="modal">
+            <div class="modal-content">
+                <img class="modal-image" src="" alt="">
+                <div class="modal-details">
+                    <h2 class="modal-title"></h2>
+                    <p class="modal-description"></p>
+                    <a class="modal-link" href="" target="_blank">Ver más</a>
+                </div>
+                <button class="modal-close">×</button>
+                <div class="modal-navigation">
+                    <button class="modal-nav-button prev">←</button>
+                    <button class="modal-nav-button next">→</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Carousel functionality
+        const carousel = document.querySelector('.carousel');
+        const carouselInner = carousel.querySelector('.carousel-inner');
+        const carouselItems = carousel.querySelectorAll('.carousel-item');
+        const carouselButtons = carousel.querySelectorAll('.carousel-button');
+        let currentSlide = 0;
+        let autoSlideInterval;
+
+        function moveToSlide(index) {
+            currentSlide = index;
+            const offset = -currentSlide * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
+
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % carouselItems.length;
+                moveToSlide(currentSlide);
+            }, 5000);
+        }
+
+        carousel.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+        carousel.addEventListener('mouseleave', startAutoSlide);
+
+        carouselButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const direction = button.classList.contains('prev') ? -1 : 1;
+                currentSlide = (currentSlide + direction + carouselItems.length) % carouselItems.length;
+                moveToSlide(currentSlide);
+            });
+        });
+
+        startAutoSlide();
+
+        // Modal functionality
+        const modal = document.querySelector('.modal');
+        const modalImage = modal.querySelector('.modal-image');
+        const modalTitle = modal.querySelector('.modal-title');
+        const modalDescription = modal.querySelector('.modal-description');
+        const modalLink = modal.querySelector('.modal-link');
+        const modalNavButtons = modal.querySelectorAll('.modal-nav-button');
+        const gridItems = document.querySelectorAll('.grid-item');
+        let currentImageIndex = 0;
+
+        function openModal(index) {
+            currentImageIndex = index;
+            const image = gridItems[index].querySelector('img');
+            modalImage.src = image.src;
+            modalTitle.textContent = image.dataset.title;
+            modalDescription.textContent = image.dataset.description;
+            modalLink.href = image.dataset.link;
+            modal.classList.add('active');
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+        }
+
+        gridItems.forEach((item, index) => {
+            item.addEventListener('click', () => openModal(index));
+        });
+
+        modal.querySelector('.modal-close').addEventListener('click', closeModal);
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeModal();
+        });
+
+        modalNavButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const direction = button.classList.contains('prev') ? -1 : 1;
+                currentImageIndex = (currentImageIndex + direction + gridItems.length) % gridItems.length;
+                openModal(currentImageIndex);
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        
+        searchInput.addEventListener('input', () => {
+            const searchTerm = searchInput.value.toLowerCase();
+            gridItems.forEach(item => {
+                const image = item.querySelector('img');
+                const title = image.dataset.title.toLowerCase();
+                const description = image.dataset.description.toLowerCase();
+                const isVisible = title.includes(searchTerm) || description.includes(searchTerm);
+                item.style.display = isVisible ? 'block' : 'none';
+            });
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', e => {
+            if (!modal.classList.contains('active')) return;
+            
+            switch(e.key) {
+                case 'Escape':
+                    closeModal();
+                    break;
+                case 'ArrowLeft':
+                    modalNavButtons[0].click();
+                    break;
+                case 'ArrowRight':
+                    modalNavButtons[1].click();
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>
