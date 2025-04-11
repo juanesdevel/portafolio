@@ -3,7 +3,7 @@
 session_start();
 
 // Tiempo de inactividad permitido (en segundos)
-$tiempo_inactividad = 600; // 10 minutos
+$tiempo_inactividad = 30000; // 50 minutos
 
 // Verificar si la variable de sesión 'LAST_ACTIVITY' está definida
 if (isset($_SESSION['LAST_ACTIVITY'])) {
@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == '') {
 
 <script>
     // Tiempo de inactividad en milisegundos (1 minuto)
-    var tiempoInactividad = 600000;
+    var tiempoInactividad = 3000000;
     var temporizador = 0;
     // Función para mostrar el alert y redirigir
     function cerrarSesion() {

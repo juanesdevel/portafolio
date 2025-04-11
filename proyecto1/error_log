@@ -1,0 +1,4 @@
+[08-Apr-2025 13:51:50 America/Bogota] PHP Warning:  mysqli::__construct(): php_network_getaddresses: getaddrinfo for sql203.infinityfree.com failed: Name or service not known in /home3/juanest2/public_html/proyecto1/conexion/conexion.php on line 18
+[08-Apr-2025 14:01:30 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto1/conexion/validador.php on line 3
+[08-Apr-2025 14:02:01 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto1/conexion/validador.php on line 3
+[08-Apr-2025 14:02:35 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto1/conexion/validador.php on line 2

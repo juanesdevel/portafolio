@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $accion = $_POST['accion'];
         $nom_asesor_sesion = $_SESSION['usuario'] ?? null; // Tomar el nombre de usuario de la sesión (asumiendo que es el asesor)
         $modulo_sesion = $_SESSION['modulo_seleccionado'] ?? null; // Tomar el módulo de la sesión
+        $fecha_actualizacion = date("Y-m-d H:i:s"); // Obtener la fecha y hora actual para la actualización
 
         $nuevo_estado = '';
         switch ($accion) {
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 exit();
         }
 
-        $sql = "UPDATE turnos SET estado = ?, nom_asesor = ?, modulo = ? WHERE id = ?";
+        $sql = "UPDATE turnos SET estado = ?, nom_asesor = ?, modulo = ?, fecha_actualizacion = ? WHERE id = ?";
         $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         }
 
-        $stmt->bind_param("sssi", $nuevo_estado, $nom_asesor_sesion, $modulo_sesion, $id_turno);
+        $stmt->bind_param("ssisi", $nuevo_estado, $nom_asesor_sesion, $modulo_sesion, $fecha_actualizacion, $id_turno);
 
         if ($stmt->execute()) {
             echo "Turno con ID " . $id_turno . " actualizado a " . $nuevo_estado . ".";

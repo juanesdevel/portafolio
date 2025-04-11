@@ -9,6 +9,63 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
     <title>Mi Portafolio - Desarrollador Junior</title>
     <style>
+    table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+th, td {
+  padding: 0.8em;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Estilos para dispositivos móviles (ancho máximo de 600px) */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /* Ocultar los encabezados de la tabla visualmente */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    margin-bottom: 1em;
+  }
+
+  td {
+    /* Ahora cada celda actuará como una fila */
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%; /* Espacio para el "encabezado" */
+    white-space: normal;
+    text-align: left;
+  }
+
+  td:before {
+    /* Añadir el texto del encabezado como "etiqueta" */
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    content: attr(data-column); /* Usar el atributo data-column */
+  }
+}
          .visitas{
              font-family: "Courier New", Consolas, monospace;
              text-align:center;
@@ -61,7 +118,7 @@
             
             }
              .fondo {
-            background-image: url('/Portafolio/redes.jpg'); /* Cambia por la ruta de tu imagen */
+            background-image: url('/portafolio/redes.jpg'); /* Cambia por la ruta de tu imagen */
             background-size: cover; /* Ajusta la imagen para cubrir toda la sección */
             background-position: center; /* Centra la imagen */
             background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -167,16 +224,16 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
          Lista de Proyectos</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a target="_blank" class="dropdown-item" href="http://electrofact.kesug.com">ElectroFact</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto1/index.php">ElectroFact</a></li>
                             <li><a target="_blank" class="dropdown-item" href="proyecto8/public/index.php">Compra y Venta</a></li>
                             <li><a target="_blank" class="dropdown-item" href="proyecto9/personal.php">Personal</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="Proyecto2/ahorcado.html">Juego de ahorcado</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="Proyecto3/3.html">Sección Galería interactiva de imagenes</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="Proyecto7/formulario.html">Sección de contacto</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="Proyecto4/tower-defense.html">Juego defensa de torres</a></li>
-                            <li><a target="_blank" class="dropdown-item" href="Proyecto5/kanban.html">Gestor de Tareas</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto2/ahorcado.html">Juego de ahorcado</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto3/3.html">Sección Galería interactiva de imagenes</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto7/formulario.html">Sección de contacto</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto4/tower-defense.html">Juego defensa de torres</a></li>
+                            <li><a target="_blank" class="dropdown-item" href="proyecto5/kanban.html">Gestor de Tareas</a></li>
                             <li><a target="_blank" class="dropdown-item" href="proyecto10/index.php">Turnos</a></li>
-
+                            <li><a target="_blank" class="dropdown-item" href="proyecto11/index.php">Clon WhatsApp</a></li>
                         </ul>
 
 
@@ -185,8 +242,8 @@
    
     <section class= "fondo" id="sobre-mi">
         <div class="photo-container ">
-            <img src="Portafolio/foto1.png" alt="" class="photo-initial">
-            <img src="Portafolio/foto3.png" alt="" class="photo-hover">
+            <img src="portafolio/foto1.png" alt="" class="photo-initial">
+            <img src="portafolio/foto3.png" alt="" class="photo-hover">
         </div>
         <h2>Sobre Mí</h2>
         <div class="project">
@@ -222,15 +279,21 @@
      
         <section class="fondo" id="proyectos">
         <h2>Proyectos</h2>
+        
+        <div class="project">
+            <h3>GitHub</h3>
+            <h3><a href="https://github.com/juanesdevel/portafolio.git"target="_blank" rel="noopener noreferrer">https://github.com/juanesdevel/portafolio.git</a></h3>
+        </div>
+
         <div class="project">
             <h3>Proyecto 1</h3>
-            <h3><a href="http://electrofact.kesug.com"target="_blank" rel="noopener noreferrer">Gestión Integral de Ventas</a></h3>
+            <h3><a href="proyecto1/index.php"target="_blank" rel="noopener noreferrer">Gestión Integral de Ventas</a></h3>
             <p>El software de facturación es una solución integral diseñada para optimizar la gestión de productos, clientes, usuarios y procesos comerciales en general. Permite gestionar el inventario de productos, administrar la información de clientes y usuarios, y generar facturas de manera eficiente y personalizada. Además, facilita el seguimiento de ventas y la emisión de reportes detallados sobre el desempeño del negocio. El sistema incluye funciones de alertas y notificaciones para mantener informados a los usuarios sobre eventos importantes, asegura la integridad de los datos mediante backups automáticos y proporciona un control de cambios para auditar las acciones dentro del software, garantizando así un entorno seguro y bien organizado.</p>
-               <img class= "img" src="img/Imagen1.png" alt="Proyecto 1" style="width: 800px; height: auto;">
+               <img class= "img" src="img/Imagen1.png" alt="proyecto 1" style="width: 800px; height: auto;">
         </div>
         <div class="project">
             <h3>Proyecto 2</h3>
-            <h3><a href="Proyecto2/ahorcado.html"target="_blank" rel="noopener noreferrer">Juego del Ahorcado</a></h3>
+            <h3><a href="proyecto2/ahorcado.html"target="_blank" rel="noopener noreferrer">Juego del Ahorcado</a></h3>
             <p>El Juego del Ahorcado es una aplicación web interactiva que desafía a los jugadores a adivinar palabras ocultas. Esta versión está desarrollada utilizando HTML, CSS y JavaScript, ofreciendo una experiencia de juego intuitiva y entretenida.
 Características Principales
 Categorías
@@ -245,35 +308,35 @@ Artistas Internacionales: Contempla músicos y artistas de diferentes épocas y 
         </div>
         <div class="project">
             <h3>Proyecto 3</h3>
-            <h3><a href="Proyecto3/3.html"target="_blank" rel="noopener noreferrer">Galería Interactiva - Visualizador de Imágenes Moderno</a></h3>
+            <h3><a href="proyecto3/3.html"target="_blank" rel="noopener noreferrer">Galería Interactiva - Visualizador de Imágenes Moderno</a></h3>
             <p>La Galería Interactiva es una aplicación web moderna y elegante diseñada para mostrar colecciones de imágenes de manera atractiva y funcional. La interfaz se divide en tres componentes principales que trabajan en conjunto para ofrecer una experiencia de usuario fluida y agradable.</p>
             <img class= "img"src="img/Galeria.png" alt="Proyecto 3" style="width: 800px; height: auto;">
         </div>
         <div class="project">
             <h3>Proyecto 4</h3>
-            <h3><a href="Proyecto4/tower-defense.html"target="_blank" rel="noopener noreferrer">Juego de defensa de Torres</a></h3>
+            <h3><a href="proyecto4/tower-defense.html"target="_blank" rel="noopener noreferrer">Juego de defensa de Torres</a></h3>
             <p>Juego de defenza de torres, Debes proteger a toda costa que las unidades enemigas recorran el camino hacia tus torres.</p>
-        <img class= "img"src="/Proyecto4/tower-defense.png" alt="Proyecto 4" style="width: 800px; height: auto;">
+        <img class= "img"src="/proyecto4/tower-defense.png" alt="proyecto 4" style="width: 800px; height: auto;">
         </div>
         <div class="project">
             <h3>Proyecto 5</h3>
-            <h3><a href="Proyecto5/kanban.html"target="_blank" rel="noopener noreferrer">Gestor de Tareas</a></h3>
+            <h3><a href="proyecto5/kanban.html"target="_blank" rel="noopener noreferrer">Gestor de Tareas</a></h3>
             <p>Sistema de Gestión de Tareas Kanban: Aplicación web con interfaz en modo oscuro que permite organizar actividades en tres columnas (Por Hacer, En Progreso, Completadas) mediante drag & drop. Incluye autenticación de usuarios, guardado automático y diseño responsivo.</p>
-            <img class= "img"src="/Proyecto5/kanban.png" alt="Proyecto 5" style="width: 800px; height: auto;">
+            <img class= "img"src="/proyecto5/kanban.png" alt="proyecto 5" style="width: 800px; height: auto;">
         </div>
         <div class="project">
             <h3>Proyecto 6</h3>
-             <h3><a href="Proyecto6/interplay.html"target="_blank" rel="noopener noreferrer">Interplay</a></h3>
+             <h3><a href="proyecto6/interplay.html"target="_blank" rel="noopener noreferrer">Interplay</a></h3>
             <p>Descripción breve del proyecto 6.</p>
-    <img class= "img"src="/Proyecto6/img/logo.jpg" alt="Proyecto 6" style="width: 800px; height: auto;">
+    <img class= "img"src="/proyecto6/img/logo.jpg" alt="Proyecto 6" style="width: 800px; height: auto;">
 
         </div>
         <div class="project">
             <h3>Proyecto 7</h3>
-            <h3><a href="Proyecto7/formulario.html"target="_blank" rel="noopener noreferrer">Sección de contacto</a></h3>
+            <h3><a href="proyecto7/formulario.html"target="_blank" rel="noopener noreferrer">Sección de contacto</a></h3>
 
             <p>Este formulario prueba el envío de datos atravéz de una página a un correo electrónico.</p>
-                <img class= "img"src="/Proyecto7/formulario.jpg" alt="Proyecto 6" style="width: 800px; height: auto;">
+                <img class= "img"src="/proyecto7/formulario.jpg" alt="Proyecto 6" style="width: 800px; height: auto;">
 
         </div>
         <div class="project">
@@ -300,7 +363,10 @@ En conjunto, estos tres módulos ofrecen una solución integral para la gestión
         </div>
         <div class="project">
             <h3>Proyecto 10</h3>
+            <h3><a href="proyecto10/index.php"target="_blank" rel="noopener noreferrer">Servico de turnos</a></h3>
             <p>Descripción breve del proyecto 10.</p>
+            <img class= "img"src="/proyecto10/img/turnos.jpg" alt="Proyecto 8" style="width: 800px; height: auto;">
+
         </div>
     </section>
     <div class="arrow-up" onclick="scrollToTop()">

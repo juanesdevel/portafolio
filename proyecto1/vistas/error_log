@@ -1,0 +1,60 @@
+[08-Apr-2025 16:42:59 America/Bogota] PHP Warning:  Undefined variable $last_execution_file in /home3/juanest2/public_html/proyecto1/vistas/backup.php on line 85
+[08-Apr-2025 16:42:59 America/Bogota] PHP Deprecated:  file_put_contents(): Passing null to parameter #1 ($filename) of type string is deprecated in /home3/juanest2/public_html/proyecto1/vistas/backup.php on line 85
+[08-Apr-2025 16:42:59 America/Bogota] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home3/juanest2/public_html/proyecto1/vistas/backup.php:85
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/backup.php(85): file_put_contents('', '2025-04-08 16:4...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/backup.php on line 85
+[08-Apr-2025 16:44:34 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto1/vistas/backup.php on line 52
+[08-Apr-2025 16:44:34 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto1/vistas/backup.php on line 52
+[08-Apr-2025 16:44:34 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto1/conexion/sesion.php on line 3
+[08-Apr-2025 16:44:34 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto1/vistas/backup.php:1) in /home3/juanest2/public_html/proyecto1/conexion/sesion.php on line 41
+[08-Apr-2025 16:45:57 America/Bogota] PHP Warning:  session_start(): Session cannot be started after headers have already been sent in /home3/juanest2/public_html/proyecto1/conexion/sesion.php on line 3
+[08-Apr-2025 16:45:57 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto1/vistas/backup.php:1) in /home3/juanest2/public_html/proyecto1/conexion/sesion.php on line 41
+[08-Apr-2025 16:55:05 America/Bogota] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php:209
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php(209): mysqli_query(Object(mysqli), 'SELECT id_produ...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php on line 209
+[08-Apr-2025 16:57:05 America/Bogota] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php:209
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php(209): mysqli_query(Object(mysqli), 'SELECT id_produ...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php on line 209
+[11-Apr-2025 03:25:22 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:25:22 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 9
+[11-Apr-2025 03:27:11 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:27:11 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 9
+[11-Apr-2025 03:27:40 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:27:40 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 9
+[11-Apr-2025 03:29:00 America/Bogota] PHP Fatal error:  Uncaught ArgumentCountError: filter_input() expects at least 2 arguments, 1 given in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php:8
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php(8): filter_input('rolUsuario')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:31:40 America/Bogota] PHP Parse error:  Unclosed '{' on line 44 in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 138
+[11-Apr-2025 03:31:42 America/Bogota] PHP Parse error:  Unclosed '{' on line 44 in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 138
+[11-Apr-2025 03:36:26 America/Bogota] PHP Fatal error:  Uncaught ArgumentCountError: filter_input() expects at least 2 arguments, 1 given in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php:8
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php(8): filter_input('codigoUsuario')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:39:36 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:39:36 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 9
+[11-Apr-2025 03:39:53 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 8
+[11-Apr-2025 03:39:53 America/Bogota] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in /home3/juanest2/public_html/proyecto1/vistas/nuevo_usuario.php on line 9
+[11-Apr-2025 03:54:21 America/Bogota] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php:209
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php(209): mysqli_query(Object(mysqli), 'SELECT id_produ...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php on line 209
+[11-Apr-2025 03:57:02 America/Bogota] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php:209
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php(209): mysqli_query(Object(mysqli), 'SELECT id_produ...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php on line 209
+[11-Apr-2025 04:14:29 America/Bogota] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php:209
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php(209): mysqli_query(Object(mysqli), 'SELECT id_produ...')
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto1/vistas/factura_en_proceso.php on line 209

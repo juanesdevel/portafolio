@@ -1,0 +1,30 @@
+[09-Apr-2025 21:26:05 America/Bogota] PHP Warning:  Array to string conversion in /home3/juanest2/public_html/proyecto12/array.php on line 5
+[09-Apr-2025 21:30:11 America/Bogota] PHP Fatal error:  Cannot use [] for reading in /home3/juanest2/public_html/proyecto12/array.php on line 5
+[10-Apr-2025 05:34:25 America/Bogota] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function suma(), 0 passed in /home3/juanest2/public_html/proyecto12/procesar.php on line 11 and exactly 2 expected in /home3/juanest2/public_html/proyecto12/procesar.php:7
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto12/procesar.php(11): suma()
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto12/procesar.php on line 7
+[10-Apr-2025 05:37:16 America/Bogota] PHP Parse error:  syntax error, unexpected token "=" in /home3/juanest2/public_html/proyecto12/procesar.php on line 7
+[10-Apr-2025 05:39:31 America/Bogota] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in /home3/juanest2/public_html/proyecto12/array.php on line 30
+[10-Apr-2025 06:01:40 America/Bogota] PHP Warning:  Undefined array key "operacion" in /home3/juanest2/public_html/proyecto12/array.php on line 29
+[10-Apr-2025 16:24:41 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 33
+[10-Apr-2025 16:24:41 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 39
+[10-Apr-2025 16:24:41 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 45
+[10-Apr-2025 16:24:41 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 50
+[10-Apr-2025 16:31:59 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 33
+[10-Apr-2025 16:31:59 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 39
+[10-Apr-2025 16:31:59 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 45
+[10-Apr-2025 16:31:59 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 50
+[10-Apr-2025 16:32:45 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 33
+[10-Apr-2025 16:32:45 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 39
+[10-Apr-2025 16:32:45 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 45
+[10-Apr-2025 16:32:45 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 50
+[10-Apr-2025 16:32:53 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 33
+[10-Apr-2025 16:32:53 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 39
+[10-Apr-2025 16:32:53 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 45
+[10-Apr-2025 16:32:53 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 50
+[10-Apr-2025 17:59:51 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 36
+[10-Apr-2025 18:00:01 America/Bogota] PHP Warning:  Undefined variable $operation in /home3/juanest2/public_html/proyecto12/array.php on line 36
+[10-Apr-2025 18:24:54 America/Bogota] PHP Parse error:  Unclosed '{' on line 26 in /home3/juanest2/public_html/proyecto12/array.php on line 64
+[10-Apr-2025 18:25:56 America/Bogota] PHP Warning:  Undefined array key "dia" in /home3/juanest2/public_html/proyecto12/array.php on line 27

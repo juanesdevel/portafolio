@@ -153,17 +153,21 @@
         ?>
     </div>
 
-    <div class="turno-actual-container">
+<div class="turno-actual-container">
         <h1>Turno</h1>
         <?php
-        $sql_ultimo_general = "SELECT modulo, turno, servicio, atencion FROM turnos WHERE estado = 'Notificado' ORDER BY fecha DESC LIMIT 1";
-        $result_ultimo_general = $conn->query($sql_ultimo_general);
+        $sql_ultimo_notificado_fecha_actualizacion = "SELECT modulo, turno, servicio, atencion 
+                                                    FROM turnos 
+                                                    WHERE estado = 'Notificado' 
+                                                    ORDER BY fecha_actualizacion DESC 
+                                                    LIMIT 1";
+        $result_ultimo_notificado_fecha_actualizacion = $conn->query($sql_ultimo_notificado_fecha_actualizacion);
 
-        if ($result_ultimo_general && $result_ultimo_general->num_rows > 0) {
-            $fila_ultimo_general = $result_ultimo_general->fetch_assoc();
-            $esPrioritarioGeneral = ($fila_ultimo_general['atencion'] === 'Preferencial');
+        if ($result_ultimo_notificado_fecha_actualizacion && $result_ultimo_notificado_fecha_actualizacion->num_rows > 0) {
+            $fila_ultimo_notificado_fecha_actualizacion = $result_ultimo_notificado_fecha_actualizacion->fetch_assoc();
+            $esPrioritarioGeneral = ($fila_ultimo_notificado_fecha_actualizacion['atencion'] === 'Preferencial');
             $prefijoGeneral = '';
-            switch ($fila_ultimo_general['servicio']) {
+            switch ($fila_ultimo_notificado_fecha_actualizacion['servicio']) {
                 case 'Consulta General':
                     $prefijoGeneral = $esPrioritarioGeneral ? 'PG - ' : 'CG - ';
                     break;
@@ -176,17 +180,16 @@
                 case 'Imagenología':
                     $prefijoGeneral = $esPrioritarioGeneral ? 'PI - ' : 'IM - ';
                     break;
-                }
+            }
             echo "<div class='ultimo-turno'>";
-            echo htmlspecialchars($prefijoGeneral . sprintf("%02d", $fila_ultimo_general['turno'])) . "<br>";
-            echo "Módulo " . htmlspecialchars($fila_ultimo_general['modulo']) . "<br>";
+            echo htmlspecialchars($prefijoGeneral . sprintf("%02d", $fila_ultimo_notificado_fecha_actualizacion['turno'])) . "<br>";
+            echo "Módulo " . htmlspecialchars($fila_ultimo_notificado_fecha_actualizacion['modulo']) . "<br>";
             echo "</div>";
         } else {
-            echo "<div class='ultimo-turno'>No hay turnos notificados.</div>";
+            echo "<div class='ultimo-turno'>No hay turnos notificados recientemente.</div>";
         }
         ?>
     </div>
-
 <script>
 // Script para recargar la página si se recibe la señal de actualización
         document.addEventListener('DOMContentLoaded', function() {

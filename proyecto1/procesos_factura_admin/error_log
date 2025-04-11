@@ -1,0 +1,1 @@
+[08-Apr-2025 14:28:35 America/Bogota] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home3/juanest2/public_html/proyecto1/conexion/sesion.php:45) in /home3/juanest2/public_html/proyecto1/procesos_factura_admin/crear_factura.php on line 41

@@ -72,6 +72,16 @@ $conexion->close();
         label { color: #bdbdbd; }
         .alert-info { background-color: #333; color: #e0e0e0; border-color: #424242; }
         .password-toggle { cursor: pointer; }
+        /* Añade esto a tu sección de estilos */
+.copy-password {
+    margin-left: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group {
+    flex-wrap: nowrap;
+}
     </style>
 </head>
 <body>
@@ -147,13 +157,17 @@ $conexion->close();
                                 echo "<td>" . $row["usuario"] . "</td>";
                                 echo "<td>";
                                 echo "<div class='input-group'>";
-                                echo "<input type='password' class='form-control password-input' value='" . $row["contrasena"] . "'>";
+                                echo "<input type='password' class='form-control password-input' value='" . $row["contrasena"] . "' id='pass-" . $row["id"] . "'>";
                                 echo "<div class='input-group-append'>";
                                 echo "<span class='input-group-text password-toggle'>";
                                 echo "<i class='fas fa-eye'></i>";
                                 echo "</span>";
+                                echo "<button class='btn btn-secondary copy-password' data-id='" . $row["id"] . "' title='Copiar contraseña'>";
+                                echo "<i class='fas fa-copy'></i>";
+                                echo "</button>";
                                 echo "</div>";
                                 echo "</div>";
+                                echo "</td>";   
                                 echo "</td>";
                                 echo "<td>" . $row["nota"] . "</td>";
                                 echo "<td>
@@ -197,6 +211,36 @@ $conexion->close();
                 });
             });
         });
+        
+        // Añade esto dentro de tu bloque document.addEventListener('DOMContentLoaded', function() { ... })
+const copyButtons = document.querySelectorAll('.copy-password');
+copyButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        const id = this.getAttribute('data-id');
+        const passwordInput = document.getElementById('pass-' + id);
+        
+        // Cambiar temporalmente a tipo texto para poder copiar
+        const originalType = passwordInput.type;
+        passwordInput.type = 'text';
+        
+        // Seleccionar y copiar
+        passwordInput.select();
+        document.execCommand('copy');
+        
+        // Deseleccionar el texto
+        passwordInput.setSelectionRange(0, 0);
+        
+        // Restaurar tipo original
+        passwordInput.type = originalType;
+        
+        // Feedback visual
+        const originalColor = this.style.backgroundColor;
+        this.style.backgroundColor = '#28a745';
+        setTimeout(() => {
+            this.style.backgroundColor = originalColor;
+        }, 1000);
+    });
+});
     </script>
 
 </body>

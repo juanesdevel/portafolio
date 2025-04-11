@@ -231,9 +231,8 @@ if ($_SESSION['rol'] != 'admin') {
                 <h2>Gestión de Turnos</h2>
                 <form method="post" class="mb-3">
                     <div class="form-group">
-                        <label for="estado">Seleccionar Estado</label>
                         <select class="form-control" id="estado" name="estado" required>
-                            <option value="">Todos los servicios</option>
+                            <option value="">Seleccionar Estado</option>
                             <option value="Pendiente">Pendiente</option>
                             <option value="Notificado">Notificado</option>
                             <option value="Cancelado">Cancelado</option>

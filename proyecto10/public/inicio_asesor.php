@@ -207,7 +207,7 @@ if ($_SESSION['rol'] != 'asesor') {
 <body>
     
     <nav class="navbar">
-        <a class="navbar-brand" href="#">Panel Asesor</a>
+        <a class="navbar-brand" href="#"><h2>Panel Asesor</h2></a>
         <div class="navbar-user">
 
             <i class="fas fa-clock widget-icon"></i>
@@ -228,15 +228,21 @@ if (isset($_SESSION['modulo_seleccionado'])) {
                 onclick="return confirmarCierreSesion()"><i class="fas fa-sign-out-alt me-1"></i> Cerrar Sesión</a>
         </div>
     </nav>
+    <div class="content-wrapper">
+        <div class="dashboard-actions">
+            <a href="pantalla_usuario.php" target="_blank"class=""><i class="fas fa-users me-2"></i> Pantalla Usuario</a>
+            <a href="pantalla_turnos.php" target="_blank"class=""><i class="fas fa-users me-2"></i> Generador de turnos</a>
+             <a href="#" class="btn btn-outline-success update-button" onclick="location.reload();"><i class="fas fa-sync-alt me-1"></i> Actualizar página</a>
+        </div>
 
         <div class="widget-container">
-            <div class="container mt-5">
+            <div class="container mt-3">
                 <h2>Gestión de Turnos</h2>
                 <form method="post" class="mb-3">
                     <div class="form-group">
-                        <label for="servicio">Seleccionar Servicio:</label>
+                       
                         <select class="form-control" id="servicio" name="servicio" required>
-                            <option value="">Todos los servicios</option>
+                            <option value="">Seleccionar Servicio</option>
                             <option value="Consulta General">Consulta General</option>
                             <option value="Laboratorio">Laboratorio</option>
                             <option value="Odontologia">Odontología</option>
@@ -310,10 +316,6 @@ if (isset($_SESSION['modulo_seleccionado'])) {
         </div>
 
 
-        <div
-            <a href="#" class="btn btn-outline-secondary update-button" onclick="location.reload();"><i
-                    class="fas fa-sync-alt me-1"></i> Actualizar página</a>
-        </div>
     </div>
 
     <footer class="footer">
