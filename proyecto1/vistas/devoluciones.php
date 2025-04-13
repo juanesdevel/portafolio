@@ -12,28 +12,36 @@ include '../conexion/sesion.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion de usuarios</title>
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Bibliotecas necesarias para Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    
     <script>function confirmar(){
         return confirm ('¿Esta seguro de elimininar el item seleccionado?')}
     
     </script>
-     
-    
-    <script src="librerias/jquery-3.2.1.min.js"></script>
-    <style>
-     .sombra {
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-        </style>
 
 </head>
 <body>
-
-    <div class= " container-fluid alert alert-danger sombra"><h1>Devoluciones <i class="fas fa-exchange-alt"></i>
-</h1> <a href="ventas.php"class="btn btn-dark btn-sm">Regresar</a><span> </span><?php echo "Usuario: ".$_SESSION['usuario'];?> </div>
-    
+        <!-- Encabezado de la página -->
+    <div class="container-fluid alert alert-danger sombra">
+        <div class="row">
+            <div class="col-10">
+               <h1>Devoluciones <i class="fas fa-exchange-alt"></i></h1>
+                <a href="ventas.php"class="btn btn-dark btn-sm">Regresar</a>
+               <span class="badge text-bg-info"><?php echo" Usuario:  "  . $_SESSION['usuario']; ?></span>
+            </div>
+           
+            <div class="col-2">
+                <div class="logo-container">
+                    <img src="../img/logo.jpg" alt="Logo de la empresa" class="logo" style="width: 200px; height: auto;">
+                </div>
+            </div>
+        </div>
+    </div>
 <hr>
+
 <div class="container-fluid">
     <a href="#" class="btn btn-primary"onclick="location.reload();">Actualizar página</a> 
 </div>

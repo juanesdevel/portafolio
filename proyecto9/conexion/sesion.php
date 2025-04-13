@@ -3,7 +3,7 @@
 session_start();
 
 // Tiempo de inactividad permitido (en segundos)
-$tiempo_inactividad = 30000; // 50 minutos
+$tiempo_inactividad = 6000; 
 
 // Verificar si la variable de sesión 'LAST_ACTIVITY' está definida
 if (isset($_SESSION['LAST_ACTIVITY'])) {
@@ -22,8 +22,8 @@ if (isset($_SESSION['LAST_ACTIVITY'])) {
         
         // Redirige al usuario con JavaScript para garantizar que se muestre el alert
         echo '<script>
-            alert("Su sesión se ha cerrado por inactividad.");
-            window.location.href = "/proyecto9/personal.php";
+            alert("¡Su sesión se ha cerrado por inactividad!.");
+            window.location.href = "../../personal.php";
         </script>';
         exit();
     }
@@ -44,13 +44,14 @@ if (!isset($_SESSION['usuario']) || $_SESSION['usuario'] == '') {
 ?>
 
 <script>
-    // Tiempo de inactividad en milisegundos (1 minuto)
-    var tiempoInactividad = 3000000;
-    var temporizador = 0;
+    // Tiempo de inactividad en milisegundos (100 minuto)
+    
+    var tiempoInactividad = 600000;
+    
     // Función para mostrar el alert y redirigir
     function cerrarSesion() {
-        alert("Su sesión se ha cerrado por inactividad.");
-        window.location.href = "../personal.php";
+        alert("¡Su sesión se ha cerrado por inactividad!.");
+        window.location.href = "../../personal.php";
     }
     
     // Establecer el temporizador

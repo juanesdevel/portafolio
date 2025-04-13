@@ -26,43 +26,23 @@ while ($fila = $resultado->fetch_assoc()) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados de Ventas</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- jQuery (importante: usar solo UNA versión) -->
+    <title>Resultados de Ventas</title> 
+    <!-- Librerias Bootstrap  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+        <!-- jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <!-- Scripts personalizados -->
-<style>
-       body {
-        background-color: #fbfcfc;
-
-    }
-
-    .sombra {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-
-    .logo {
-        width: 150px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-    
-</style>
- 
-    
+    <script src="../js/horayfecha.js" defer></script>
 </head>
 <body>
     <!-- Encabezado de la página -->
     <div class="container-fluid alert alert-info sombra">
         <div class="row">
             <div class="col-8">
-               <h1>Proceso de Factura</h1>
+               <h2>Proceso de Factura</h2>
                <a href="inicio_admin.php" class="btn btn-dark sombra">
                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
@@ -252,17 +232,6 @@ $(document).ready(function() {
     });
 });
 
-        function actualizarFechaHora() {
-            const fechaHora = new Date();
-            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaHora.toLocaleDateString('es-ES', opcionesFecha);
-            const horaFormateada = fechaHora.toLocaleTimeString('es-ES');
-            
-            document.getElementById('fechaHora').innerHTML = `${fechaFormateada} - ${horaFormateada}`;
-        }
-
-        setInterval(actualizarFechaHora, 1000); // Actualizar cada segundo
-        actualizarFechaHora(); // Llamar inmediatamente para mostrar la fecha y hora al cargar la página
 
 </script>
 </body>

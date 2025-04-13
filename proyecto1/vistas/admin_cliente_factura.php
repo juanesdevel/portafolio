@@ -28,22 +28,28 @@ include '../conexion/sesion.php';
     
     <!-- Estilos CSS personalizados -->
     <style>
-        /* CSS para establecer el color de fondo de la página */
-        body {
-            background-color: #f5f5dc; /* Color beige claro (similar a "bisque") */
-        }
-    </style>
-    
-    <!-- Bibliotecas necesarias para Bootstrap -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script src="../scripts/horaYfecha.js" defer></script>
-<link rel="stylesheet" href="../style/style.css">
-    <script src="librerias/jquery-3.2.1.min.js"></script>
+
+    body {
+        background-color: #fbfcfc;
+
+    }
+
+    .sombra {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .logo {
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+    </style> 
+        <!-- Bibliotecas necesarias para Bootstrap -->
+         <link rel="stylesheet" href="../css/bootstrap.min.css">
+
 </head>
 <body>
     <!-- Encabezado de la página -->
@@ -59,7 +65,7 @@ include '../conexion/sesion.php';
             </div>
             <div class="col-2">
                 <div class="logo-container">
-                    <img src="../img/logo.png" alt="Logo de la empresa" class="logo" style="width: 200px; height: auto;">
+                    <img src="../img/logo.jpg" alt="Logo de la empresa" class="logo" style="width: 200px; height: auto;">
                 </div>
             </div>
         </div>

@@ -23,21 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($rol == "admin") {
                 $_SESSION["rol"] = "admin";
-                echo '<script>alert("Bienvenido Usuario Administrador"); location.assign("/proyecto9/vistas/inicio_admin.php");</script>';
-                exit();
-            } elseif ($rol == "asesor") {
-                $_SESSION["rol"] = "asesor";
-                echo '<script>alert("Bienvenido ' . htmlspecialchars($_SESSION['usuario']) . '"); location.assign("/proyecto9/vistas/inicio_operador.php");</script>';
+                echo '<script>alert("Bienvenido Usuario Administrador"); location.assign("../vistas/panel_inicio/inicio_admin.php");</script>';
                 exit();
             } else {
-                echo '<script>alert("Usuario sin autorización de ingreso."); location.assign("/proyecto9/personal.php");</script>';
+                echo '<script>alert("Usuario sin autorización de ingreso."); location.assign("../vistas/panel_inicio/proyecto9/personal.php");</script>';
                 exit();
             }
         } else {
-            echo '<script>alert("Acceso denegado: Usuario o contraseña incorrecta."); location.assign("/proyecto9/personal.php");</script>';
+            echo '<script>alert("Acceso denegado: Usuario o contraseña incorrecta."); location.assign("../personal.php");</script>';
         }
     } else {
-        echo '<script>alert("Acceso denegado: Usuario o contraseña incorrecta."); location.assign("/proyecto9/personal.php");</script>';
+        echo '<script>alert("Acceso denegado: Usuario o contraseña incorrecta."); location.assign("../personal.php");</script>';
     }
 
     $stmt->close();

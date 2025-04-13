@@ -73,6 +73,8 @@ $conexion->close();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mensualidades</title>
+        <link rel="icon" href="../../img/victoria.png" type="image/png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -81,14 +83,41 @@ $conexion->close();
     <script src="../scripts/horaYfecha.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
-        body { background-color: #121212; color: #e0e0e0; }
-        .table-dark { color: #e0e0e0; }
-        .table-dark th, .table-dark td { border-color: #424242; }
-        .form-control { background-color: #333; color: #e0e0e0; border: 1px solid #555; }
-        .form-control:focus { background-color: #444; color: #e0e0e0; border-color: #666; }
-        label { color: #bdbdbd; }
-        .alert-info { background-color: #333; color: #e0e0e0; border-color: #424242; }
-        .password-toggle { cursor: pointer; }
+            body {
+            background-color: #121212; /* Fondo oscuro */
+            background-image: url('../../img/fondo3.png'); /* Mantiene tu imagen de fondo */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            color: #e0e0e0; /* Texto claro */
+
+.table-dark {
+    color: #e0e0e0;
+    background-color: #121212;
+    opacity: 0.5; /* valor entre 0 (transparente) y 1 (opaco) */
+}
+
+    .table-dark th,
+    .table-dark td {
+    border-color: #424242;
+}
+    .form-control { background-color: #333; color: #e0e0e0; border: 1px solid #555; }
+    .form-control:focus { background-color: #444; color: #e0e0e0; border-color: #666; }
+    label { color: #bdbdbd; }
+    .alert-info { background-color: #333; color: #e0e0e0; border-color: #424242; }
+    .password-toggle { cursor: pointer; }
+        
+        /* Añade esto a tu sección de estilos */
+    .copy-password {
+    margin-left: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+    .input-group {
+    flex-wrap: nowrap;
+}
     </style>
 </head>
 <body>
@@ -98,7 +127,7 @@ $conexion->close();
             <div class="row">
                 <div class="col-8">
                     <h1>Mensualidades</h1>
-                    <a href="../inicio_admin.php" class="btn btn-dark sombra">
+                    <a href="../panel_inicio/inicio_admin.php" class="btn btn-dark sombra">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
@@ -122,24 +151,29 @@ $conexion->close();
     </div>
     <hr>
 
-    <div class="container-fluid">
-        <div class="container mt-4">
-            <h2 style="color:#0d6efd;">Consulta de Registros</h2>
-            <form method="GET" class="mb-4">
-                <div class="form-row">
-                    <?php
-                    $filters = ['entidad'];
-                    foreach ($filters as $filter) {
-                        echo '<div class="col-md-4 mb-6">';
-                        echo '<label for="' . $filter . '">' . ucfirst(str_replace('_', ' ', $filter)) . ':</label>';
-                        echo '<input type="text" class="form-control" id="' . $filter . '" name="' . $filter . '" value="' . (isset($_GET[$filter]) ? $_GET[$filter] : '') . '">';
-                        echo '</div>';
+<div class="container-fluid">
+    <div class="container mt-4">
+        <h2 style="color:#0d6efd;">Consulta de Registros</h2>
+        <form method="GET" class="mb-4">
+            <div class="form-row">
+                <?php
+                $filters = ['entidad'];
+                $entidades = ['', 'Tigo', 'Funeraria', 'Transporte Hija', 'Comfama', 'Coasist', 'EPM'];
+                foreach ($filters as $filter) {
+                    echo '<div class="col-md-4 mb-6">';
+                    echo '<label for="' . $filter . '">' . ucfirst(str_replace('_', ' ', $filter)) . ':</label>';
+                    echo '<select class="form-control" id="' . $filter . '" name="' . $filter . '">';
+                    foreach ($entidades as $entidad) {
+                        $selected = (isset($_GET[$filter]) && $_GET[$filter] === $entidad) ? 'selected' : '';
+                        echo '<option value="' . $entidad . '" ' . $selected . '>' . $entidad . '</option>';
                     }
-                    ?>
-                </div>
-                <button type="submit" class="btn btn-primary" name="buscar">Buscar</button>
-            </form>
-
+                    echo '</select>';
+                    echo '</div>';
+                }
+                ?>
+            </div>
+            <button type="submit" class="btn btn-primary" name="buscar">Buscar</button>
+        </form>
             <?php if ($result !== null): ?>
                 <table class="table table-dark">
                     <thead>

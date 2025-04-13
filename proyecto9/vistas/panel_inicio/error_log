@@ -1,0 +1,105 @@
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:56:49 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:56:49 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:57:06 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:57:06 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:58:13 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:58:13 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:59:20 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 18:59:20 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:04:02 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:04:02 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:06:07 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:06:07 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  include(../conexion/conexion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/conexion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 2
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  include(../conexion/sesion.php): Failed to open stream: No such file or directory in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  include(): Failed opening '../conexion/sesion.php' for inclusion (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 3
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Undefined global variable $_SESSION in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Trying to access array offset on value of type null in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 82
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Undefined variable $dbhost in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Undefined variable $dbuser in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Undefined variable $dbpass in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:08:31 America/Bogota] PHP Warning:  Undefined variable $dbname in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110
+[11-Apr-2025 19:08:31 America/Bogota] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php:110
+Stack trace:
+#0 /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php(110): mysqli->__construct(NULL, NULL, Object(SensitiveParameterValue), NULL)
+#1 {main}
+  thrown in /home3/juanest2/public_html/proyecto9/vistas/panel_inicio/inicio_admin.php on line 110

@@ -11,77 +11,13 @@ include '../conexion/sesion.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administracion de Facturas</title>
-        <style>
-            table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1em;
-}
-
-th, td {
-  padding: 0.8em;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-/* Estilos para dispositivos móviles (ancho máximo de 600px) */
-@media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-
-  /* Ocultar los encabezados de la tabla visualmente */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  tr {
-    border: 1px solid #ccc;
-    margin-bottom: 1em;
-  }
-
-  td {
-    /* Ahora cada celda actuará como una fila */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%; /* Espacio para el "encabezado" */
-    white-space: normal;
-    text-align: left;
-  }
-
-  td:before {
-    /* Añadir el texto del encabezado como "etiqueta" */
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    font-weight: bold;
-    content: attr(data-column); /* Usar el atributo data-column */
-  }
-}
-
-        /* CSS para cambiar el color de fondo */
-        body {
-            background-color: #f5f5dc; /* Cambia #f0f0f0 por el color deseado */
-        }
-    </style>
     <!-- Bibliotecas necesarias para Bootstrap -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <!-- Bibliotecas necesarias para Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <script src="../js/horayfecha.js" defer></script>
+    <script src="../js/bootstrap.bundle.min.js" defer></script>
 </head>
 <body>
    
@@ -336,18 +272,6 @@ if (!empty($no_factura)) {
         document.getElementById('fecha_anulacion').value = formatearFechaHora();
     });
     
-            function actualizarFechaHora() {
-            const fechaHora = new Date();
-            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaHora.toLocaleDateString('es-ES', opcionesFecha);
-            const horaFormateada = fechaHora.toLocaleTimeString('es-ES');
-            
-            document.getElementById('fechaHora').innerHTML = `${fechaFormateada} - ${horaFormateada}`;
-        }
-
-        setInterval(actualizarFechaHora, 1000); // Actualizar cada segundo
-        actualizarFechaHora(); // Llamar inmediatamente para mostrar la fecha y hora al cargar la página
-
 </script>
 
 </body>

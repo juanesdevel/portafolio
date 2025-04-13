@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.9">
     <title>Login - Sistema Personal de Datos</title>
+    <link rel="icon" href="img/victoria.png" type="image/png">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
             background-color: #121212; /* Fondo oscuro para el modo oscuro */
             color: #e0e0e0; /* Texto claro para el modo oscuro */
             background-size: cover;
-            background-image: url('img/Fondo1.png'); /* Mantiene tu imagen de fondo */
+            background-image: url('img/fondo1.png'); /* Mantiene tu imagen de fondo */
 
             background-position: center;
             background-repeat: no-repeat;
@@ -90,8 +94,8 @@
 
 
     <?php
-    include ("/proyecto9/conexion/conexion.php");
-    include ("/proyecto9/conexion/validador.php");
+    include ("proyecto9/conexion/conexion.php");
+    include ("proyecto9/conexion/validador.php");
     ?>
 
     <div class="container mt-5">

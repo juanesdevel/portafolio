@@ -10,106 +10,19 @@ include '../conexion/sesion.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administración de Facturas</title>
-    
-    <!-- Estilos personalizados -->
-    <style>
-        table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 1em;
-}
-
-th, td {
-  padding: 0.8em;
-  border: 1px solid #ddd;
-  text-align: left;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-/* Estilos para dispositivos móviles (ancho máximo de 600px) */
-@media (max-width: 600px) {
-  table, thead, tbody, th, td, tr {
-    display: block;
-  }
-
-  /* Ocultar los encabezados de la tabla visualmente */
-  thead tr {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-  }
-
-  tr {
-    border: 1px solid #ccc;
-    margin-bottom: 1em;
-  }
-
-  td {
-    /* Ahora cada celda actuará como una fila */
-    border: none;
-    border-bottom: 1px solid #eee;
-    position: relative;
-    padding-left: 50%; /* Espacio para el "encabezado" */
-    white-space: normal;
-    text-align: left;
-  }
-
-  td:before {
-    /* Añadir el texto del encabezado como "etiqueta" */
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 45%;
-    padding-right: 10px;
-    white-space: nowrap;
-    font-weight: bold;
-    content: attr(data-column); /* Usar el atributo data-column */
-  }
-}
-
-        /* Estilo para el logotipo */
-        .logo {
-            width: 150px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-        }
-
-          body {
-        background-color: #fbfcfc;
-
-    }
-
-    .sombra {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-
-    .logo {
-        width: 150px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-    </style>
-
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
+    <title>Resumen de Factura</title>
+        <!-- Librerias necesarias-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <script src="../js/horayfecha.js" defer></script>
 </head>
 <body>
     <!-- Encabezado de la página -->
     <div class="container-fluid alert alert-info sombra">
         <div class="row">
             <div class="col-8">
-               <h1>Detalles de Factura</h1>
+               <h2>Detalles de Factura</h2>
                <button class="btn btn-dark" onclick="window.history.back();">Regresar</button>
                <span class="badge text-bg-info"><?php echo" Usuario:  "  . $_SESSION['usuario']; ?></span>
             </div>
@@ -220,7 +133,7 @@ th {
                     echo "<h5>Factura actual: No. $no_factura </h5>";
                     
                     // Crea la tabla para mostrar los detalles de la factura
- echo "<table class='table table-striped' style='border-collapse: collapse; width: 100%;'>"; 
+                    echo "<table class='table table-striped' style='border-collapse: collapse; width: 100%;'>"; 
                     echo "<tr>";
                     echo "<th>ID Factura</th>";
                     echo "<th>No factura</th>";
@@ -272,7 +185,7 @@ th {
                     echo "<h5>$num_filas Ventas cargadas a la Factura No. <span>$no_factura</span></h5>";
                     
                     // Crea la tabla para mostrar los detalles de las ventas
- echo "<table class='table table-striped' style='border-collapse: collapse; width: 100%;'>"; 
+                    echo "<table class='table table-striped' style='border-collapse: collapse; width: 100%;'>"; 
                     echo "<tr>";
                     echo "<th>ID Venta</th>";
                     echo "<th>Factura Venta</th>";
@@ -350,36 +263,9 @@ th {
     });
 
     function imprimirVenta() {
-        // Aquí debes agregar la lógica para iniciar la impresión de la venta
-        // Puedes usar window.print() para imprimir la página actual, o enviar los datos a un script PHP para generar un PDF e imprimirlo.
         window.print(); // Ejemplo simple para imprimir la página actual
 
-        // Si necesitas enviar los datos a un script PHP para generar un PDF, puedes hacerlo aquí:
-        /*
-        fetch('generar_pdf_venta.php', {
-            method: 'POST',
-            body: new FormData(document.getElementById('cerrarFacturaForm')) // Envía los datos del formulario
-        })
-        .then(response => response.blob())
-        .then(blob => {
-            // Crea un objeto URL para el blob del PDF
-            const url = window.URL.createObjectURL(blob);
-            // Abre el PDF en una nueva ventana para imprimir
-            window.open(url, '_blank');
-        });
-        */
     }
-     function actualizarFechaHora() {
-            const fechaHora = new Date();
-            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaHora.toLocaleDateString('es-ES', opcionesFecha);
-            const horaFormateada = fechaHora.toLocaleTimeString('es-ES');
-            
-            document.getElementById('fechaHora').innerHTML = `${fechaFormateada} - ${horaFormateada}`;
-        }
-
-        setInterval(actualizarFechaHora, 1000); // Actualizar cada segundo
-        actualizarFechaHora(); // Llamar inmediatamente para mostrar la fecha y hora al cargar la página
 
 </script>
 </body>

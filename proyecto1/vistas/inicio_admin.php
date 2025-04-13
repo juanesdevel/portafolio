@@ -16,30 +16,12 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Administrador</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+    <script src="../js/horayfecha.js" defer></script>
 
-    <style>
-    body {
-        background-color: #fbfcfc;
-
-    }
-
-    .sombra {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-
-    .logo {
-        max-width: 100%;
-        height: auto;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-    </style>
 </head>
 
 <body>
@@ -56,7 +38,7 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
 
                 
             </div>
-            <div class="col-3 md-2">
+            <div class="col-3">
                 <div class="logo-container">
                     <img src="../img/logo.jpg" alt="Logo de la empresa" class="logo"
                         style="width: 200px; height: auto;">
@@ -237,18 +219,6 @@ if ($resultado5->num_rows > 0) {
         return confirm("¿Está seguro de que desea cerrar la sesión?");
     }
     
-        function actualizarFechaHora() {
-            const fechaHora = new Date();
-            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaHora.toLocaleDateString('es-ES', opcionesFecha);
-            const horaFormateada = fechaHora.toLocaleTimeString('es-ES');
-            
-            document.getElementById('fechaHora').innerHTML = `${fechaFormateada} - ${horaFormateada}`;
-        }
-
-        setInterval(actualizarFechaHora, 1000); // Actualizar cada segundo
-        actualizarFechaHora(); // Llamar inmediatamente para mostrar la fecha y hora al cargar la página
-
     </script>
     
     </body>

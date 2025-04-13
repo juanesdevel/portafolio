@@ -18,31 +18,15 @@ include '../conexion/sesion.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crear Factura</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <!-- jQuery (importante: usar solo UNA versión) -->
+   <!-- Librerias Bootstrap  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css">
+        <!-- jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-<style>
-       body {
-        background-color: #fbfcfc;
-
-    }
-
-    .sombra {
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-
-    .logo {
-        width: 150px;
-        height: auto;
-        border-radius: 10px;
-        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    }
-</style>
+    <script src="../js/horayfecha.js" defer></script>
 
 </head>
 <body>
@@ -51,7 +35,7 @@ include '../conexion/sesion.php';
     <div class="container-fluid alert alert-info sombra">
         <div class="row">
             <div class="col-8">
-               <h1>Proceso de Factura - Agregar ventas</h1>
+               <h2>Proceso de Factura - Agregar ventas</h2>
                <button class="btn btn-dark" onclick="window.history.back();">Regresar</button>
                <span class="badge text-bg-info"><?php echo" Usuario:  "  . $_SESSION['usuario']; ?></span>
             </div>
@@ -66,6 +50,7 @@ include '../conexion/sesion.php';
         </div>
     </div>
 <hr>
+
 <?php
 // Obtener el valor del número de factura desde el método GET
 $no_factura = $_GET['no_factura'] ?? '';
@@ -399,22 +384,6 @@ function limpiarFormulario() {
     $('#valor_total_venta').val('');
     $('#diferencia_producto').val('');
     $('#unidades_venta').val('');
-    
-    // Opcionalmente, limpiar también la referencia
-    // $('#ref_prod_venta').val('');
-    
-            function actualizarFechaHora() {
-            const fechaHora = new Date();
-            const opcionesFecha = { year: 'numeric', month: 'long', day: 'numeric' };
-            const fechaFormateada = fechaHora.toLocaleDateString('es-ES', opcionesFecha);
-            const horaFormateada = fechaHora.toLocaleTimeString('es-ES');
-            
-            document.getElementById('fechaHora').innerHTML = `${fechaFormateada} - ${horaFormateada}`;
-        }
-
-        setInterval(actualizarFechaHora, 1000); // Actualizar cada segundo
-        actualizarFechaHora(); // Llamar inmediatamente para mostrar la fecha y hora al cargar la página
-
 }
 </script>
 </body>

@@ -46,12 +46,12 @@
             /* Contenedor para el logo en la esquina superior derecha */
             position: fixed; /* Posición fija en la pantalla */
             top: 20px; /* Distancia desde la parte superior */
-            right: 20px; /* Distancia desde la derecha */
+            right: 125px; /* Distancia desde la derecha */
             z-index: 1000; /* Asegura que esté por encima de otros elementos */
         }
         .logo {
             /* Estilo para la imagen del logo */
-            width: auto; /* Ancho fijo */
+            width: 200px; /* Ancho fijo */
             height: auto; /* Altura automática para mantener proporciones */
             border-radius: 10px; /* Bordes redondeados */
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */

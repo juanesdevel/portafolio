@@ -1,10 +1,13 @@
 <?php
-include '../conexion/conexion.php';
-include '../conexion/sesion.php';
+include '../../conexion/conexion.php';
+include '../../conexion/sesion.php';
 // Verificación del rol de administrador
 if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
     // Si no es administrador, redirigir al inicio o denegar acceso
-    header("Location: inicio_operador.php");
+    alert("¡Usted no cuenta con el rol para esta página!.");
+    header("Location: ../../personal.php");
+    exit();
+
 }
 ?>
 
@@ -16,14 +19,16 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Administrador</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<link rel="icon" href="../img/victoria.png" type="image/png">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="../scripts/horaYfecha.js" defer></script>
     <style>
         body {
             background-color: #121212; /* Fondo oscuro */
-            background-image: url('../img/fondo2.png'); /* Mantiene tu imagen de fondo */
+            background-image: url('../../img/fondo3.png'); /* Mantiene tu imagen de fondo */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
@@ -74,12 +79,12 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
 <body>
     <div class="container-fluid alert alert-black sombra">
         <div class="row">
-            <div class="col-8">
+            <div class="col-7">
                 <h1>Panel de Servicios</h1>
                 <a href="../conexion/cerrar_sesion.php" class="btn btn-danger btn-sm sombra" onclick="return confirmarCierreSesion()">Cerrar Sesión</a>
                 <span class="badge text-bg-info"><?php echo "Usuario: " . $_SESSION['usuario']; ?></span>
             </div>
-            <div class="col-2">
+            <div class="col-3">
                 <h5><span class="badge text-bg-info" id="fechaHora"></span></h5>
             </div>
         </div>
@@ -89,18 +94,18 @@ if (!isset($_SESSION['rol']) || $_SESSION['rol'] != 'admin') {
         <div class="row">
             <div class="col-12">
                 
-                <a href="#" class="btn btn-primary" onclick="location.reload();">Actualizar página</a><br><br>
-                <a href="registros/registros.php" class="btn btn-outline-primary sombra">Keepass</a><br><br>
-                <a href="mensualidades/mensualidades.php" class="btn btn-outline-primary sombra">Mensualidades</a><br><br>
-                <a href="eventos/eventos.php" class="btn btn-outline-primary sombra">Eventos</a><br><br>
-                <a href="usuarios/usuarios.php" class="btn btn-outline-warning sombra">Gestión de Usuarios</a><br><br>
-                <a href="backup/backup.php" class="btn btn-outline-warning sombra">Backup</a><br><br>
+                <a href="#" class="btn btn-primary" onclick="location.reload();">Actualizar página</a>
+                <a href="../registros/registros.php" class="btn btn-outline-primary sombra">Keepass</a>
+                <a href="../mensualidades/mensualidades.php" class="btn btn-outline-primary sombra">Mensualidades</a>
+                <a href="../eventos/eventos.php" class="btn btn-outline-primary sombra">Eventos</a>
+                <a href="../usuarios/usuarios.php" class="btn btn-outline-warning sombra">Gestión de Usuarios</a>
+                <a href="../backup/backup.php" class="btn btn-outline-warning sombra">Backup</a>
             </div>
         </div>
     </div>
-    <hr>
 
-<div class="container-fluid alert alert-black sombra">
+
+<div class="container-fluid alert alert-black">
 
 <?php
 
@@ -113,17 +118,17 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener el evento más próximo
-$sql = "SELECT * FROM eventos WHERE fecha >= CURDATE() ORDER BY fecha ASC LIMIT 2";
+$sql = "SELECT * FROM eventos WHERE fecha >= CURDATE() ORDER BY fecha ASC LIMIT 3";
 $result = $conexion->query($sql);
 
 if ($result->num_rows > 0) {
     while($row = $result->fetch_assoc()) {
         echo "Proximo evento:" . "<br>";
-        echo "Fecha: " . '<span class="badge badge-info">' . htmlspecialchars($row["fecha"]) . '</span><br>';
+        echo "Fecha: " . '<span class="badge rounded-pill text-bg-warning">' . htmlspecialchars($row["fecha"]) . '</span><br>';
         echo "Nombre: " . $row["nombre"] . "<br>";
         echo "Descripción: " . $row["descripcion"] . "<br>";
         echo "Dirección: " . $row["direccion"] . "<br>";
-        echo "<hr>";
+        echo "<br>";
     }
 } else {
     echo "No hay eventos próximos.";

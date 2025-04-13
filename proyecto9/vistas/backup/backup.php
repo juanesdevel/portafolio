@@ -93,25 +93,64 @@ if (file_exists($last_execution_file)) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=0.8">
     <title>Administrador</title>
+        <link rel="icon" href="../../img/victoria.png" type="image/png">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
             crossorigin="anonymous"></script>
     <script src="../scripts/horaYfecha.js" defer></script>
     <link rel="stylesheet" href="../style/style.css">
     <script src="librerias/jquery-3.2.1.min.js"></script>
+        <style>
+            body {
+            background-color: #121212; /* Fondo oscuro */
+            background-image: url('../../img/fondo3.png'); /* Mantiene tu imagen de fondo */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            color: #e0e0e0; /* Texto claro */
+
+.table-dark {
+    color: #e0e0e0;
+    background-color: #121212;
+    opacity: 0.5; /* valor entre 0 (transparente) y 1 (opaco) */
+}
+
+.table-dark th,
+.table-dark td {
+    border-color: #424242;
+}
+        .form-control { background-color: #333; color: #e0e0e0; border: 1px solid #555; }
+        .form-control:focus { background-color: #444; color: #e0e0e0; border-color: #666; }
+        label { color: #bdbdbd; }
+        .alert-info { background-color: #333; color: #e0e0e0; border-color: #424242; }
+        .password-toggle { cursor: pointer; }
+        
+        /* Añade esto a tu sección de estilos */
+.copy-password {
+    margin-left: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group {
+    flex-wrap: nowrap;
+}
+    </style>
+
 </head>
 <body>
-    <div class="container-fluid alert alert-info sombra">
+    <div class="container-fluid alert alert-blak sombra">
         <div class="row">
             <div class="col-8">
                 <h1>Gestión de Backup</h1>
-                <a href="../inicio_admin.php" class="btn btn-dark sombra"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                <a href="../panel_inicio/inicio_admin.php" class="btn btn-dark sombra"><svg xmlns="http://www.w3.org/2000/svg" width="24"
                                                                            height="24" viewBox="0 0 24 24" fill="none"
                                                                            stroke="white" stroke-width="2"
                                                                            stroke-linecap="round"
@@ -121,14 +160,6 @@ if (file_exists($last_execution_file)) {
                     </svg>
                     Home</a>
                 <span class="badge text-bg-info"><?php echo " Usuario:  " . $_SESSION['usuario']; ?></span>
-            </div>
-            <div class="col-2">
-                <h5><span class="badge text-bg-info" id="fechaHora"></span></h5>
-            </div>
-            <div class="col-2">
-                <div class="logo-container">
-                    <img src="../img/logo.png" alt="Logo de la empresa" class="logo" style="width: 200px; height: auto;">
-                </div>
             </div>
         </div>
     </div>
@@ -155,19 +186,6 @@ if (file_exists($last_execution_file)) {
             </div>
         </div>
 
-        <hr>
-
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col"><img src="../img/Backup.png" alt="Backup"></div>
-                <div class="col">
-                    <h2>
-                        Esta opción genera un backup de toda la base de datos en formato SQL.
-                        Si requiere restaurar los datos con algún backup obtenido, se debe comunicar con soporte técnico.
-                        Para más información comuníquese con juanesnet2016@gmail.com
-                    </h2>
-                </div>
-            </div>
         </div>
     </div>
 
